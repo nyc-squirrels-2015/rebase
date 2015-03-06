@@ -1,5 +1,8 @@
 Snippets = new Mongo.Collection('Snippets')
-
+//test snippet
+Snippets.insert({"first" :
+                      {"url": "123123", "start_time" : 0, "end_time" : 0, "title" : "inagadadavida"}
+                      });
 
 
 //MODELS
@@ -21,14 +24,34 @@ Snippets = new Mongo.Collection('Snippets')
 if (Meteor.isClient) {
 
   Template.body.helpers({
+    show: function(){
+      return Tasks.find()
+
+    }
+
 
   });
 
   Template.body.events({
 
     "submit #start_time" : function(event){
+      console.log('start')
 
-      var new_start = event.target;
+      var new_start = event.target.text.value;
+
+      // Snippets.insert({
+      //   start_time:
+      // })
+
+
+
+    },
+
+
+    "submit #end_time" : function(event){
+      console.log('end')
+
+      var new_end = event.target.text.value;
 
     }
   });
