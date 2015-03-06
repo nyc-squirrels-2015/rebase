@@ -1,3 +1,4 @@
+
 //ROUTES
   Router.route('/', function() {
     this.render('welcome');
@@ -79,10 +80,9 @@
 
     });
 
-    Accounts.ui.config({
-      passwordSignupFields: "USERNAME_ONLY"
-    });
-
+      Accounts.ui.config({
+        passwordSignupFields: "USERNAME_ONLY"
+      });
 
   }
 

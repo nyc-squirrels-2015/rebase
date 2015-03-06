@@ -6,6 +6,10 @@
   <h1> REBASE </h1>
 	<div id= "login">
   		{{>loginButtons}}
+
+  		{{#if currentUser}}
+  			{{currentUser.profile.login}}
+  		{{/if}}
 	</div>
 </body>
 
