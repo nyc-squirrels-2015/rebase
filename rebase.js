@@ -1,3 +1,5 @@
+Snippets = new Mongo.Collection('Snippets')
+
 
 
 //MODELS
@@ -9,14 +11,6 @@
         //use for ST and END
 
 
-
-
-
-
-
-
-
-
       // $('#audio').bind('canplay', function() {
       //   this.currentTime = 29; // jumps to 29th secs
       // });
@@ -25,6 +19,19 @@
 
 
 if (Meteor.isClient) {
+
+  Template.body.helpers({
+
+  });
+
+  Template.body.events({
+
+    "submit #start_time" : function(event){
+
+      var new_start = event.target;
+
+    }
+  });
 
 
       function Snippet(url, title){
@@ -51,6 +58,8 @@ if (Meteor.isClient) {
       Snippet.prototype.set_cue_out = function(cue_out_time){
         this.cue_out = cue_out_time;
       };
+
+
 
 
 }

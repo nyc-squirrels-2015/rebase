@@ -5,5 +5,17 @@
 <body>
   <h1>Welcome to Meteor!</h1>
 
+  <form id = "start_time">
+        <input type="text" name="start" placeholder=""/>
+        <input type='submit' value = "set_start">
+  </form>
+  <form id = "end_time">
+        <input type="text" name="end" placeholder=""/>
+        <input type='submit' value = "set_end">
+  </form>
 </body>
 
+
+<template name="snippet">
+  <li>{{text}}</li>
+</template>
