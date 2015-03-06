@@ -7,4 +7,9 @@
 meteor-platform
 autopublish
 insecure
+<<<<<<< HEAD
 iron:router
+=======
+accounts-ui
+accounts-password
+>>>>>>> add user
