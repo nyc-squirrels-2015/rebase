@@ -1,27 +1,9 @@
+Router.map(function(){
+  this.route('snippet');
+  this.route('stump', {path: '/'
+  });
+});
 
-
-//MODELS
-
-    //SNIPPET
-
-    //js things to note for functions
-      //currentTime = start differential of the snippet relative to it's own zero
-        //use for ST and END
-
-
-
-
-
-
-
-
-
-
-      // $('#audio').bind('canplay', function() {
-      //   this.currentTime = 29; // jumps to 29th secs
-      // });
-
-  //CONTROLLER
 
 
 if (Meteor.isClient) {
