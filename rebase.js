@@ -1,19 +1,45 @@
+
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  // Template.hello.helpers({
-  //   counter: function () {
-  //     return Session.get('counter');
-  //   }
-  // });
+  var context = new AudioContext();
+    function loadAudio(object, url) {
 
-  // Template.hello.events({
-  //   'click button': function () {
-  //     // increment the counter when button is clicked
-  //     Session.set('counter', Session.get('counter') + 1);
-  //   }
-  // });
+      var request = new XMLHttpRequest();
+      request.open('GET', url, true);
+      request.responseType = 'arrayBuffer';
+
+      request.onload = function(){
+        context.decodeAudioData(request.response, function(buffer){
+          object.buffer = buffer;
+        });
+      }
+      request.send()
+    }
+
+    function addAudioProperties(object) {
+      object.name = object.id;
+      object.source = $(object).data('sound');
+      loadAudio(object, object.source);
+      object.play = function () {
+          var s = context.createBufferSource();
+          s.buffer = object.buffer;
+          s.connect(context.destination);
+          s.start(0);
+          object.s = s;
+      }
+    }
+
+
+  $( document ).ready(function(){
+
+
+
+
+
+
+  });
+
 }
 
 if (Meteor.isServer) {

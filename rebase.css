@@ -1,1 +1,17 @@
 /* CSS declarations go here */
+
+
+#pad1{
+  width:100px;
+  height:100px;
+  background:red;
+}
+
+
+#pad2{
+  margin-top:5px;
+  width:100px;
+  height:100px;
+  background:green;
+}
+
