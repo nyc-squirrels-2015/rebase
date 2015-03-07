@@ -12,6 +12,8 @@ Snippets = new Mongo.Collection("snippets");
       this.render('session')
     })
 
+    snip1 = new Snippet("yoyoyo.mp3", "Best Song")
+
 
 if (Meteor.isClient) {
 
@@ -20,20 +22,26 @@ if (Meteor.isClient) {
 
 
 
+    $('.cueview').text(snip1)
+
+
+
     Template.body.events({
       "submit .new-cue": function(event){
 
         var cue = event.target.cuechanger.value;
 
+        snip1.cueIn = cue;
+
         //find first snippet and update it's cue yo
-        Snippets.update(
-          {"_id" : "RZfK3WvWLqcWpdcho"},
-          {
-            $set: {
-              cueIn: cue
-                  },
-            $currentDate: {lastModified: true}
-          });
+        // Snippets.update(
+        //   {"_id" : "RZfK3WvWLqcWpdcho"},
+        //   {
+        //     $set: {
+        //       cueIn: cue
+        //           },
+        //     $currentDate: {lastModified: true}
+        //   });
 
 
 
@@ -42,17 +50,6 @@ if (Meteor.isClient) {
         return false;
 
       }
-    });
-
-    $( document ).ready(function(){
-
-      //TEST
-      var snip1 =  Snippets.findOne({"_id" : "RZfK3WvWLqcWpdcho"}).cueIn;
-      // $(.cueview).append()
-
-
-
-
     });
 
 
