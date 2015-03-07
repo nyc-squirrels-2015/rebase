@@ -1,8 +1,6 @@
 Snippets = new Mongo.Collection("snippets");
 
 
-
-
   //ROUTES
     Router.route('/', function() {
       this.render('welcome');
@@ -12,48 +10,31 @@ Snippets = new Mongo.Collection("snippets");
       this.render('session')
     })
 
+
+    //TEST SNIPPET IN GLOBAL SCOPE
     snip1 = new Snippet("yoyoyo.mp3", "Best Song")
 
 
 if (Meteor.isClient) {
 
-    //Driver Test Code
+    //TEST TEMPLATE EVENT TO CHECK UPDATE OF SNIPPET CUE IN
+    Template.session.events({
 
-
-
-
-    $('.cueview').text(snip1)
-
-
-
-    Template.body.events({
       "submit .new-cue": function(event){
 
-        var cue = event.target.cuechanger.value;
+        console.log('hit')
+        var cue = event.target.text.value;
 
         snip1.cueIn = cue;
 
-        //find first snippet and update it's cue yo
-        // Snippets.update(
-        //   {"_id" : "RZfK3WvWLqcWpdcho"},
-        //   {
-        //     $set: {
-        //       cueIn: cue
-        //           },
-        //     $currentDate: {lastModified: true}
-        //   });
-
-
-
         event.target.text.value = "";
-        //prevent default of form submit
+
+        $('.cueview').text(snip1.cueIn)
+
         return false;
 
       }
     });
-
-
-
 
 //MODELS
 
