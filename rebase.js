@@ -9,11 +9,6 @@
 
 
 
-
-
-
-
-
 if (Meteor.isClient) {
 
 
