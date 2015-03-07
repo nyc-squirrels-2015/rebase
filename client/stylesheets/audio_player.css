@@ -1,4 +1,4 @@
-div#audio_player {
+div.audio_player {
   width: 500px;
   height: 60px;
   background: #000;
@@ -6,13 +6,13 @@ div#audio_player {
   margin: 50px auto;
 }
 
-div#audio_player > div > audio {
+div.audio_player > div > audio {
   width: 500px;
   background: #000;
   float: left;
 }
 
-div#audio_player > canvas {
+div.audio_player > canvas {
   width: 500px;
   height: 30px;
   background: #002D3C;

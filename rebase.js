@@ -1,4 +1,3 @@
-
 Snippets = new Mongo.Collection("snippets");
 
   //ROUTES
@@ -33,10 +32,6 @@ if (Meteor.isClient) {
         return Snippets.findOne({"_id" : "RZfK3WvWLqcWpdcho"}).cueIn;
       }
     });
-
-    //VIEEWWWWWSSSS ?
-
-
 
   }
 
