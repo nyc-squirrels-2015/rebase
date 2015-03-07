@@ -1,4 +1,4 @@
-  //ROUTES
+//ROUTES
   Router.route('/', function() {
     this.render('welcome');
   });
@@ -6,12 +6,11 @@
   Router.route('/session', function() {
     this.render('session')
   })
-
-
   if (Meteor.isClient) {
 
-//Model
-  //Snippets
+//MODELS
+
+    //SNIPPET
     function Snippet(url, title){
       this.url = url;
       this.title = title;
@@ -27,12 +26,14 @@
       this.cue_out = cue_out_time;
     };
 
+    //STUMP
     function Stump(url){
       var stump = new Audio([url]);
       return stump
     }
 
-//Controller
+
+  //CONTROLLER
     var SnippetController = (function(){
       var createNewSnippet = function(url){
         var snippet = new Audio([url]);
@@ -46,7 +47,8 @@
       }
     })();
 
-//VIIIEEWWWWS?
+
+    //VIEEWWWWWSSSS ?
     $(document).ready(function(){
       var $streams = $('audio')
       var initialStream = $streams[0];
