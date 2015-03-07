@@ -1,32 +1,25 @@
+  //ROUTES
+    Router.route('/', function() {
+      this.render('welcome');
+    });
 
-
-//MODELS
-
-    //SNIPPET
-
-    //js things to note for functions
-      //currentTime = start differential of the snippet relative to it's own zero
-        //use for ST and END
-
-
+    Router.route('/session', function() {
+      this.render('session')
+    })
 
 
 
 
 
 
-
-
-      // $('#audio').bind('canplay', function() {
-      //   this.currentTime = 29; // jumps to 29th secs
-      // });
-
-  //CONTROLLER
 
 
 if (Meteor.isClient) {
 
 
+
+
+  //SNIPPET MODEL
       function Snippet(url, title){
         this.url = url;
         this.title = title;
