@@ -14,24 +14,38 @@ if (Meteor.isClient) {
   //TEST
     Template.session.events({
 
-      "submit .new-cue": function(event){
+      "submit .new-cueIn": function(event){
         event.preventDefault();
         var cue = event.target.text.value;
 
-        console.log(cue);
         Snippets.update({"_id" : "RZfK3WvWLqcWpdcho"},
           {$set:{cueIn: cue}}
           );
 
-        console.log(oldcue);
+        event.target.text.value = "";
+
+      },
+
+       "submit .new-cueOut": function(event){
+        event.preventDefault();
+        var cue = event.target.text.value;
+
+
+        Snippets.update({"_id" : "RZfK3WvWLqcWpdcho"},
+          {$set:{cueOut: cue}}
+          );
         event.target.text.value = "";
 
       }
     });
 
     Template.session.helpers({
-      test_snippet: function () {
+      cueIn: function () {
         return Snippets.findOne({"_id" : "RZfK3WvWLqcWpdcho"}).cueIn;
+      },
+
+      cueOut: function () {
+        return Snippets.findOne({"_id" : "RZfK3WvWLqcWpdcho"}).cueOut;
       }
     });
 

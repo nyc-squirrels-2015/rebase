@@ -12,6 +12,10 @@
   <a href="/session">create a session </a>
 </template>
 
+
+
+
+
 <template name="session">
   <h3> Sesssion </h3>
   <div class="audio_player">
@@ -19,16 +23,26 @@
     <canvas class="analyser_render"></canvas>
   </div>
   <hr>
-  <div class ='cueview'>{{test_snippet}}
+  <div class ='cueIn'>Cue In: {{cueIn}}
+  </div>
+  <div class ='cueOut'>Cue Out: {{cueOut}}
   </div>
   <hr>
-  <form class="new-cue">
-        <input type="text" name="text" placeholder="New CueIn" />
+  <form class="new-cueIn">
+        <input type="text" name="text" placeholder="New Cue In" />
+        <input type="submit" value="set">
+  </form>
+  <form class="new-cueOut">
+        <input type="text" name="text" placeholder="New Cue Out" />
         <input type="submit" value="set">
   </form>
   <hr>
   <a href="/">back to welcome</a>
 </template>
+
+
+
+
 
 <template name="snippets">
   <div id="snippet_list">
