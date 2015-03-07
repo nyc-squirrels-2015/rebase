@@ -15,8 +15,9 @@ if (Meteor.isClient) {
     Template.session.events({
 
       "submit .new-cue": function(event){
-
+        event.preventDefault();
         var cue = event.target.text.value;
+
         console.log(cue);
         Snippets.update({"_id" : "RZfK3WvWLqcWpdcho"},
           {$set:{cueIn: cue}}
@@ -24,6 +25,7 @@ if (Meteor.isClient) {
 
         console.log(oldcue);
         event.target.text.value = "";
+
       }
     });
 
