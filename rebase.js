@@ -11,8 +11,6 @@ Snippets = new Mongo.Collection("snippets");
 
 if (Meteor.isClient) {
 
-
-
   }
 
   if (Meteor.isServer) {
