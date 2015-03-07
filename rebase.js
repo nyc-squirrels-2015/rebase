@@ -1,3 +1,13 @@
+  //ROUTES
+    Router.route('/', function() {
+      this.render('welcome');
+    });
+
+    Router.route('/session', function() {
+      this.render('session')
+    })
+
+//MODELS
 
 //ROUTES
   Router.route('/', function() {

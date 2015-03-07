@@ -5,12 +5,10 @@
 <body>
   <h1> REBASE </h1>
 	<div id= "login">
-  		{{>loginButtons}}
-
-  		{{#if currentUser}}
-  			{{currentUser.profile.login}}
-  		{{/if}}
+  	{{>loginButtons}}
 	</div>
+  <h1>Welcome {{/currentUser}}!</h1>
+
 </body>
 
 <template name="welcome">
