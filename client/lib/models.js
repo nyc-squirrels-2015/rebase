@@ -7,6 +7,7 @@ function Snippet(url, title){
   this.cueOut = 0
 }
 
+
 Snippet.prototype.set_cue_in = function(cue_in_time){
   this.cue_in = cue_in_time;
 };
