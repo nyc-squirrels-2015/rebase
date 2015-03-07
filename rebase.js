@@ -1,4 +1,4 @@
-
+Posts = new Mongo.Collection
   //ROUTES
     Router.route('/', function() {
       this.render('welcome');
