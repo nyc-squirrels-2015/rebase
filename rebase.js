@@ -1,4 +1,8 @@
-Posts = new Mongo.Collection
+Snippets = new Mongo.Collection("snippets");
+
+
+
+
   //ROUTES
     Router.route('/', function() {
       this.render('welcome');
@@ -9,8 +13,50 @@ Posts = new Mongo.Collection
     })
 
 
-
 if (Meteor.isClient) {
+
+    //Driver Test Code
+
+
+
+
+    Template.body.events({
+      "submit .new-cue": function(event){
+
+        var cue = event.target.cuechanger.value;
+
+        //find first snippet and update it's cue yo
+        Snippets.update(
+          {"_id" : "RZfK3WvWLqcWpdcho"},
+          {
+            $set: {
+              cueIn: cue
+                  },
+            $currentDate: {lastModified: true}
+          });
+
+
+
+        event.target.text.value = "";
+        //prevent default of form submit
+        return false;
+
+      }
+    });
+
+    $( document ).ready(function(){
+
+      //TEST
+      var snip1 =  Snippets.findOne({"_id" : "RZfK3WvWLqcWpdcho"}).cueIn;
+      // $(.cueview).append()
+
+
+
+
+    });
+
+
+
 
 //MODELS
 
