@@ -1,3 +1,4 @@
+
 Snippets = new Mongo.Collection("snippets");
 
 
@@ -10,26 +11,24 @@ Snippets = new Mongo.Collection("snippets");
       this.render('session')
     })
 
-
-    //TEST SNIPPET IN GLOBAL SCOPE
-    snip1 = new Snippet("yoyoyo.mp3", "Best Song")
-
-
 if (Meteor.isClient) {
 
-    //TEST TEMPLATE EVENT TO CHECK UPDATE OF SNIPPET CUE IN
+  //TEST
+
+    Template.session.helpers({
+      test_snippet: function () {
+        return Snippets.findOne({"_id" : "RZfK3WvWLqcWpdcho"}).cueIn;
+      }
+    });
+
     Template.session.events({
 
       "submit .new-cue": function(event){
-
         console.log('hit')
         var cue = event.target.text.value;
-
         snip1.cueIn = cue;
-
         event.target.text.value = "";
 
-        $('.cueview').text(snip1.cueIn)
 
         return false;
 
