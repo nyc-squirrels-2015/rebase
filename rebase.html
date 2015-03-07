@@ -5,6 +5,8 @@
 <body>
   <h1> REBASE </h1>
 
+{{> uploadForm}}
+
 </body>
 
 <template name="welcome">
@@ -30,9 +32,18 @@
   <button id="pause_all">Pause All</button>
 </template>
 
+
 <template name="new_snippet_form">
   <form id="new_snippet">
     <input type="text" name="url" placeholder="Insert Snippet URL here"><br>
     <input type="submit" value="Add Snippet">
   </form>
 </template>
+
+<template name="uploadForm">
+  <form>
+    <input type="file" id="file-select" name="f">
+    <input type="submit" value="Upload snippet">
+  </form>
+</template>
+

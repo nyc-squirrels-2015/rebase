@@ -1,12 +1,12 @@
 //ROUTES
-  Router.route('/', function() {
-    this.render('welcome');
-  });
+Router.route('/', function() {
+  this.render('welcome');
+});
 
-  Router.route('/session', function() {
-    this.render('session')
-  })
-  if (Meteor.isClient) {
+Router.route('/session', function() {
+  this.render('session')
+})
+if (Meteor.isClient) {
 
 //MODELS
 
@@ -34,18 +34,18 @@
 
 
   //CONTROLLER
-    var SnippetController = (function(){
-      var createNewSnippet = function(url){
-        var snippet = new Audio([url]);
-        snippet.controls = true;
-        console.log(snippet)
-        $("#snippet_list").append(snippet).append("<br>")
-      }
+  var SnippetController = (function(){
+    var createNewSnippet = function(url){
+      var snippet = new Audio([url]);
+      snippet.controls = true;
+      console.log(snippet)
+      $("#snippet_list").append(snippet).append("<br>")
+    }
 
-      return {
-        createNewSnippet: createNewSnippet
-      }
-    })();
+    return {
+      createNewSnippet: createNewSnippet
+    }
+  })();
 
 
     //VIEEWWWWWSSSS ?
@@ -79,8 +79,22 @@
 
     });
 
-
+    Template.uploadForm.events({
+     'submit form': function(event, template) {
+      event.preventDefault();
+      var input = document.getElementById('file-select');
+      var files = input.files;
+      for (var i = 0; i < files.length; i++) {
+        SnippetFiles.insert(files[i], function(err, fileObj){
+          console.log('fileObj', fileObj);
+        });
+      }
+      console.log(files);
+      alert('H');
+    }
+  });
   }
+
 
   if (Meteor.isServer) {
     Meteor.startup(function () {
