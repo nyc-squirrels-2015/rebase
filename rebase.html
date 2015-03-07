@@ -13,48 +13,6 @@
 </template>
 
 
-
-
-
-<template name="session">
-  <h3> Sesssion </h3>
-  <div class="audio_player">
-    <div class="audio_box"></div>
-    <canvas class="analyser_render"></canvas>
-  </div>
-  <hr>
-  <div class ='cueIn'>Cue In: {{cueIn}}
-  </div>
-  <div class ='cueOut'>Cue Out: {{cueOut}}
-  </div>
-  <hr>
-  <form class="new-cueIn">
-        <input type="text" name="text" placeholder="New Cue In" />
-        <input type="submit" value="set">
-  </form>
-  <form class="new-cueOut">
-        <input type="text" name="text" placeholder="New Cue Out" />
-        <input type="submit" value="set">
-  </form>
-  <hr>
-  <a href="/">back to welcome</a>
-</template>
-
-
-
-
-
-<template name="snippets">
-  <div id="snippet_list">
-    <audio id="one" src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-    <audio src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-    <audio src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-    <audio src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-  </div>
-  <button id="play_all">Play All</button>
-  <button id="pause_all">Pause All</button>
-</template>
-
 <template name="new_snippet_form">
   <form id="new_snippet">
     <input type="text" name="url" placeholder="Insert Snippet URL here"><br>
