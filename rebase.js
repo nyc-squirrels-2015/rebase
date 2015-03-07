@@ -27,11 +27,18 @@
       this.cue_out = cue_out_time;
     };
 
+    function Stump(url){
+      var stump = new Audio([url]);
+      return stump
+    }
 
 //Controller
     var SnippetController = (function(){
       var createNewSnippet = function(url){
-        var snippet = new Audio([url])
+        var snippet = new Audio([url]);
+        snippet.controls = true;
+        console.log(snippet)
+        $("#snippet_list").append(snippet).append("<br>")
       }
 
       return {
@@ -47,7 +54,8 @@
 
       $("#new_snippet").on('submit', function(event){
         event.preventDefault();
-
+        var snippetUrl = event.target[0].value;
+        SnippetController.createNewSnippet(snippetUrl);
       })
 
       $("#play_all").on('click', function(event){
