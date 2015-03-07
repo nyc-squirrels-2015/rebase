@@ -104,5 +104,24 @@ if (Meteor.isClient) {
 
   }
 
+
+
+
+if (Meteor.isClient) {
+Template.uploadForm.events({
+ 'submit form': function(event, template) {
+  event.preventDefault();
+  var input = document.getElementById('file-select');
+  var files = input.files;
+  for (var i = 0; i < files.length; i++) {
+    SnippetFiles.insert(files[i], function(err, fileObj){
+      console.log('fileObj', fileObj);
+    });
+  }
+  console.log(files);
+  alert('H');
+ }
+});
+
 }
 
