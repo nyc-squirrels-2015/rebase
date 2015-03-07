@@ -1,55 +1,79 @@
   //ROUTES
-    Router.route('/', function() {
-      this.render('welcome');
-    });
+  Router.route('/', function() {
+    this.render('welcome');
+  });
 
-    Router.route('/session', function() {
-      this.render('session')
-    })
-
-
+  Router.route('/session', function() {
+    this.render('session')
+  })
 
 
+  if (Meteor.isClient) {
+
+//Model
+  //Snippets
+    function Snippet(url, title){
+      this.url = url;
+      this.title = title;
+      this.cueIn = 0;
+      this.cueOut = 0
+    }
+
+    Snippet.prototype.set_cue_in = function(cue_in_time){
+      this.cue_in = cue_in_time;
+    };
+
+    Snippet.prototype.set_cue_out = function(cue_out_time){
+      this.cue_out = cue_out_time;
+    };
 
 
-
-
-if (Meteor.isClient) {
-
-
-
-
-  //SNIPPET MODEL
-      function Snippet(url, title){
-        this.url = url;
-        this.title = title;
-        this.cueIn = 0;
-        this.cueOut = 0;
-        this.start_time = 0;
-        this.end_time = 0;
+//Controller
+    var SnippetController = (function(){
+      var createNewSnippet = function(url){
+        var snippet = new Audio([url])
       }
 
-      Snippet.prototype.set_start = function(start_time){
-        this.start_time = start_time;
-      };
+      return {
+        createNewSnippet: createNewSnippet
+      }
+    })();
 
-      Snippet.prototype.set_end = function(end_time){
-        this.end_time = end_time;
-      };
+//VIIIEEWWWWS?
+    $(document).ready(function(){
+      var $streams = $('audio')
+      var initialStream = $streams[0];
+      var nextStream = $streams[1];
 
-      Snippet.prototype.set_cue_in = function(cue_in_time){
-        this.cue_in = cue_in_time;
-      };
+      $("#new_snippet").on('submit', function(event){
+        event.preventDefault();
 
-      Snippet.prototype.set_cue_out = function(cue_out_time){
-        this.cue_out = cue_out_time;
-      };
+      })
+
+      $("#play_all").on('click', function(event){
+        event.preventDefault();
+        var $streams = $('audio')
+        $streams.each(function(index, el){
+          el.play();
+        })
+      })
+
+      $("#pause_all").on('click', function(event){
+        event.preventDefault();
+        var $streams = $('audio')
+        $streams.each(function(index, el){
+          el.pause();
+        })
+      })
 
 
-}
+    });
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
+
+  }
+
+  if (Meteor.isServer) {
+    Meteor.startup(function () {
     // code to run on server at startup
   });
-}
+  }
