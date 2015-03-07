@@ -6,6 +6,29 @@
     Router.route('/session', function() {
       this.render('session')
     })
+<<<<<<< HEAD
+=======
+=======
+//MODELS
+<<<<<<< HEAD
+Band = new Meteor.Collection('Band'),
+StumpSong = new Meteor.Collection('StumpSong')
+Snippet = new Meteor.Collection('snippet')
+Session = new Meteor.collection('session')
+>>>>>>> Add Models
+=======
+Band = new Mongo.Collection('Band'),
+StumpSong = new Mongo.Collection('StumpSong')
+Snippet = new Mongo.Collection('snippet')
+Session = new Mongo.Collection('session')
+>>>>>>> Change collection from Meteor to Mongo
+
+
+
+
+
+
+>>>>>>> Change collection from Meteor to Mongo
 
 //MODELS
 
