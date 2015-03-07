@@ -90,7 +90,7 @@ if (Meteor.isClient) {
         });
       }
       console.log(files);
-      alert('H');
+      alert('Sent to Uploads Directory.');
     }
   });
   }
