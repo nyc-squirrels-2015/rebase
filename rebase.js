@@ -1,11 +1,22 @@
 Snippets = new Mongo.Collection("snippets");
 
   //ROUTES
+
+
+    // Router.config(function(){
+    //   //
+
+
+    // })
+
+
+
     Router.route('/', function() {
       this.render('welcome');
     });
 
     Router.route('/session', function() {
+
       this.render('session')
     })
 
