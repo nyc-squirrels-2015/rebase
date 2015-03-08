@@ -4,8 +4,6 @@ Template.create_band.events({
 
     var band_name = event.target.new_band_name.value;
 
-    //Creates band in db with band name sent from create_band template form
-
     Bands.insert({
       name: band_name,
       createAt: new Date(),

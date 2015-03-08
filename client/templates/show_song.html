@@ -1,5 +1,11 @@
 <template name="show_song">
-  {{display_songs}}
+
+  <ul>
+    {{#each display_songs}}
+      <li><a href='session'> {{name}}</a></li>
+    {{/each}}
+  </ul>
+
 </template>
 
 
