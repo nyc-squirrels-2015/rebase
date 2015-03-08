@@ -1,5 +1,11 @@
 <template name="band_list">
+
   <ul>
-    <li>band1</li>
+    {{#each display_bands}}
+      <li><a href='/session'>{{name}}</a></li>
+    {{/each}}
   </ul>
+  <div class='created_band'>
+    yo yo
+  </div>
 </template>
