@@ -1,5 +1,7 @@
 Snippets = new Mongo.Collection("snippets");
 
+Bands = new Mongo.Collection("bands");
+
   //ROUTES
 
     Router.route('/', function() {
