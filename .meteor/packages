@@ -9,3 +9,6 @@ autopublish
 insecure
 iron:router
 peerlibrary:aws-sdk
+accounts-ui
+accounts-password
+email
