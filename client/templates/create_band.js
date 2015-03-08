@@ -10,8 +10,7 @@ Template.create_band.events({
       name: band_name,
       createAt: new Date(),
       creator: Meteor.userId(),
-      songs: [],
-      members: [Meteor.userId()]
+      // members: [Meteor.userId()]
     });
 
 
