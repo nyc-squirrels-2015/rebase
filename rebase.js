@@ -7,7 +7,11 @@ Snippets = new Mongo.Collection("snippets");
     });
 
     Router.route('/session', function() {
-      this.render('session')
+      this.render('session');
+    })
+
+    Router.route('/band', function() {
+      this.render('band');
     })
 
 if (Meteor.isClient) {
