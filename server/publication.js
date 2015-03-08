@@ -10,5 +10,6 @@ Meteor.publish('joinedBand', function(bandId){
 
 Meteor.publish('sessions', function(){
   var currentUserId = this.userId;
-  return Sessions.find();
+  if Band.userId = this.userId;
+  return Sessions.find({bandId : bandId});
 });
