@@ -1,9 +1,8 @@
 <template name="snippets">
   <div id="snippet_list">
-    <audio id="one" src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-    <audio src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-    <audio src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
-    <audio src="http://www.noiseaddicts.com/samples/2544.mp3" controls></audio><br>
+    {{#each samples}}
+      <audio id="{{_id}}" src="{{url}}" controls></audio><br>
+    {{/each}}
   </div>
   <button id="play_all">Play All</button>
   <button id="pause_all">Pause All</button>

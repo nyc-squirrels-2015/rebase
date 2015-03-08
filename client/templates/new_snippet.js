@@ -18,8 +18,13 @@ Template.new_snippet_form.events({
     var url = event.target.url.value;
 
     var title = event.target.title.value;
-    new_snip = new Snippet(url, title)
-    Snippets.insert(new_snip)
+    new_snip = new Snippet(url, title);
+    Snippets.insert(new_snip);
+    // var audio = new Audio([new_snip.url]);
+    // audio.controls = "true";
+    // audio.preload = "true";
+    // audio.loop = "false";
+    // $("#snippet_list").append(audio);
 
 
     //make method that adds new <src> to the audio element with the given url (string interp twerK)
