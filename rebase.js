@@ -28,7 +28,7 @@ if (Meteor.isClient) {
         reader.onloadend = function(){
            Meteor.call("upload_to_s3", fileName, reader.result);
         };
-        var snip = {fileName: fileName, url:'http://s3.amazonaws.com/rebase-audio-samples/' + fileName};
+        var snip = {title: fileName, url:'http://s3.amazonaws.com/rebase-audio-samples/' + fileName};
         Snippets.insert(snip);
         console.log('snip', snip);
       }
