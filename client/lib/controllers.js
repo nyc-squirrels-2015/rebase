@@ -1,9 +1,9 @@
 //Snippets
 
-var snippet = new Audio(["http://d3.freemp3hosting.com/1rOz_bIEyoq_3f8ed787/RAC%20-%20We%20Belong%20%28Feat.%20Katie%20Herzig%29.mp3"]);
-snippet.controls = true;
-snippet.loop = false;
-snippet.autoplay = false;
+var stump = new Audio(["http://d3.freemp3hosting.com/1rOz_bIEyoq_3f8ed787/RAC%20-%20We%20Belong%20%28Feat.%20Katie%20Herzig%29.mp3"]);
+stump.controls = true;
+stump.loop = false;
+stump.autoplay = false;
 
 //Analyser
 
@@ -14,12 +14,12 @@ var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, b
 window.addEventListener('load', initAudioPlayer, false);
 
 function initAudioPlayer() {
-  document.getElementsByClassName('audio_box')[0].appendChild(snippet);
+  document.getElementById('audio_box').appendChild(stump);
   context = new AudioContext();
   analyser = context.createAnalyser();
-  canvas = document.getElementsByClassName('analyser_render')[0];
+  canvas = document.getElementById('analyser_render');
   ctx = canvas.getContext('2d');
-  source = context.createMediaElementSource(snippet);
+  source = context.createMediaElementSource(stump);
   source.connect(analyser);
   analyser.connect(context.destination);
   frameLooper();
