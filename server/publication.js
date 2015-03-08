@@ -8,8 +8,7 @@ Meteor.publish('joinedBand', function(bandId){
   return Bands.find({bandId: bandId})
 });
 
-Meteor.publish('sessions', function()}{
-  return Sessions.find()
+Meteor.publish('sessions', function(){
+  var currentUserId = this.userId;
+  return Sessions.find();
 });
-
-Meteor.publish()
