@@ -4,11 +4,13 @@
 
 <body>
   <h1> REBASE </h1>
+
+  {{> uploadForm}}
 </body>
 
-<template name="welcome">
-  <h3> Login/Signup </h3>
-  <hr>
-  <a href="/session">create a session </a>
+<template name="uploadForm">
+  <form>
+    <input type="file" id="file-select" name="f">
+    <input type="submit" value="Upload snippet">
+  </form>
 </template>
-
