@@ -1,5 +1,9 @@
 Snippets = new Mongo.Collection("snippets");
 
+Bands = new Mongo.Collection("bands");
+
+Songs = new Mongo.Collection("songs");
+
   //ROUTES
 
     Router.route('/', function() {
@@ -10,8 +14,13 @@ Snippets = new Mongo.Collection("snippets");
       this.render('session')
     })
 
+
+
 if (Meteor.isClient) {
 
+
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"});
 
 }
 
