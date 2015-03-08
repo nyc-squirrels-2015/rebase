@@ -10,15 +10,19 @@ Template.uploadForm.events({
       var file = inp.files[0];
       if (file) {
         var reader = new FileReader();
-        reader.readAsBinaryString(file);
+        reader.readAsArrayBuffer(file);
         reader.onloadend = function(){
-           Meteor.call("upload_to_s3", fileName, reader.result);
+           Meteor.call("upload_to_s3", fileName, new Uint8Array(reader.result));
         };
 
-        var snip = {title: fileName, url:'http://s3.amazonaws.com/rebase-audio-samples/' + fileName, cueIn: 0, cueOut:0};
+        setTimeout(function(){
+          var snip = {title: fileName, url:'http://d2j1aentbotvl3.cloudfront.net/' + fileName, cueIn: 0, cueOut:0};
+          Snippets.insert(snip);
+          console.log('snip', snip);
 
-        Snippets.insert(snip);
-        console.log('snip', snip);
+        },
+          2000);
+
       }
 
       }
