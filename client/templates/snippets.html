@@ -9,7 +9,7 @@
   <div id="snippet_list">
 
     {{#each samples}}
-      <audio-snippet src="{{url}}"
+      <audio-snippet id="{{_id}}" src="{{url}}"
         data-cue-in="{{cueIn}}"
         data-cue-out="{{cueOut}}"></audio-snippet>
       <form id="update_cues">
