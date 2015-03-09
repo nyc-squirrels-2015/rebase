@@ -1,10 +1,13 @@
 //Snippets
 
-var stump = new Audio(["http://d3.freemp3hosting.com/1rOz_bIEyoq_3f8ed787/RAC%20-%20We%20Belong%20%28Feat.%20Katie%20Herzig%29.mp3"]);
+var stump = new Audio(["http://www.noiseaddicts.com/samples/4155.mp3"]);
 stump.controls = true;
 stump.loop = false;
 stump.autoplay = false;
 
+stump.ontimeupdate = function(){
+  console.log(stump.currentTime);
+}
 //Analyser
 
 var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
