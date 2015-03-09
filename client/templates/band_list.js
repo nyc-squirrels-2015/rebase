@@ -1,15 +1,10 @@
 Template.band_list.helpers({
     display_bands: function() {
 
-      var created_bands = Bands.find({creator: Meteor.userId()}).fetch();
-      console.log
+    var my_bands = Bands.find({members: {$in: [Meteor.userId()]}}).fetch()
+    console.log(my_bands)
 
-      return created_bands
+    return my_bands
     }
-
 });
 
-
-
-//display band name
-//display band songs as link underneath
