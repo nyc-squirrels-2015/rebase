@@ -1,37 +1,27 @@
 Template.add_band_member.events({
   'submit #add_member':function(event){
+
     event.preventDefault();
 
-    var new_member = event.target.new_member.value;
+    var new_member_name = event.target.new_member.value;
+    var new_member = Meteor.users.findOne({username: new_member_name});
+    var current_band_id = $('#band_id').val()
+    var current_band = Bands.findOne({_id: current_band_id})
 
-    var found_users = Meteor.users.find().fetch();
+    console.log("New User Id ", new_member._id);
+    console.log("Members Before", current_band.members);
 
-    for(var i = 0; i < found_users.length; i++){
-      if(found_users[i].username === new_member){
-
-
-
-      }
+    if (new_member && current_band){
+      console.log('current BANDDD', current_band);
+      Bands.update({_id: current_band._id}, {$push:{members: new_member._id}})
+      console.log("new member to add", new_member._id);
+      console.log('current BANDDD', current_band);
     }
 
-
-      //Bands.find({$in: members})
-
-
-    // if () {
-
-    // }
-
-    //check if name exists in database as user
-
-    //if they do exist add the band_id to the user so the user can visualize the band
-
-
-    //insert into database
-
+    else{
+      console.log("cant find " + new_member_name);
+    }
 
   }
-
-
 
 });
