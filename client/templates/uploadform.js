@@ -1,30 +1,32 @@
 Template.uploadForm.events({
-      'submit' : function(event){
-        event.preventDefault();
-        var inp = document.getElementById('file-select');
-      var fileName = inp.value;
-      fileName = new Date().getTime() + "_" + fileName.replace(/^.*\\/, "");
-      fileName = fileName.replace(/[^0-9a-z.]/ig, "_");
-      fileName = fileName.replace(/__+/g, "_");
+  'submit' : function(event){
 
-      var file = inp.files[0];
+  fixUploadFileName  = function (file) {
+  var fileName = file.name;
+  fileName = new Date().getTime() + "_" + fileName.replace(/^.*\\/, "");
+  fileName = fileName.replace(/[^0-9a-z.]/ig, "_");
+  fileName = fileName.replace(/__+/g, "_");
+  return fileName;
+  };
+
+    event.preventDefault();
+    
+      var file = document.getElementById('file-select').files[0];
+
       if (file) {
-        var reader = new FileReader();
-        reader.readAsArrayBuffer(file);
-        reader.onloadend = function(){
-           Meteor.call("upload_to_s3", fileName, new Uint8Array(reader.result));
-        };
-
-        setTimeout(function(){
-          var snip = {title: fileName, url:'http://d2j1aentbotvl3.cloudfront.net/' + fileName, cueIn: 0, cueOut:0};
-          Snippets.insert(snip);
-          console.log('snip', snip);
-
-        },
-          2000);
-
+        var preferredName = fixUploadFileName(file);
+        var metaContext = {preferredName: preferredName }
+        var uploader = new Slingshot.Upload("rebase", metaContext);
+          uploader.send(file, function (error, downloadUrl) {
+          if (error) {
+            console.log(error);
+            return;
+          } else {
+            var snip = {title: preferredName, url:'http://d2j1aentbotvl3.cloudfront.net/' + preferredName, cueIn: 0, cueOut:0};
+            Snippets.insert(snip);
+            console.log('snip', snip);
+          }
+        });
       }
-
-      }
-
-    });
+    }
+});
