@@ -4,7 +4,8 @@
     this.url = url;
     this.title = title;
     this.cueIn = 0;
-    this.cueOut = 0
+    this.cueOut = 0;
+    this.createdAt = new Date()
   };
 
 

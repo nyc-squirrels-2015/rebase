@@ -2,6 +2,13 @@ Template.snippets.helpers({
   samples: function () {
     var snips = Snippets.find().fetch();
     return snips
+  },
+
+  snippets_for_rebase_date: function() {
+    var snips = Snippets.find({createdAt:{$lt:Session.get('rebase_date')}}).fetch();
+    console.log(snips)
+    return snips
+
   }
 });
 
@@ -24,6 +31,16 @@ Template.snippets.events({
         }
       })
     };
-  }
+  },
+
+  'submit #time-history' : function(event){
+   event.preventDefault();
+   var rebase_date_string = $(event.target).find('input[name=rebase_time]').val();
+   console.log('rebase_date_string', rebase_date_string);
+   var rebase_date = new Date(rebase_date_string)
+   // console.log(rebase_date);
+   Session.set('rebase_date', rebase_date);
+   console.log(Session.get('rebase_date'))
+ }
 
 });
