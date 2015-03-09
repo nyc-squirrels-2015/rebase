@@ -1,14 +1,17 @@
 <template name="snippets">
 
-  <div id="audio_player">
+<!--   <div id="audio_player">
     <div id="audio_box"></div>
     <canvas id="analyser_render"></canvas>
-  </div>
+  </div> -->
+
 
   <div id="snippet_list">
 
     {{#each samples}}
-      <audio id="{{_id}}" src="{{url}}" controls></audio><span>Cue In: {{cueIn}} Cue Out: {{cueOut}}</span><br>
+      <audio-snippet src="{{url}}"
+        data-cue-in="{{cueIn}}"
+        data-cue-out="{{cueOut}}"></audio-snippet>
       <form id="update_cues">
         <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
         <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
