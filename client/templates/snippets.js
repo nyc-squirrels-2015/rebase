@@ -1,7 +1,7 @@
 Template.snippets.helpers({
-  samples: function () {
-    var snips = Snippets.find().fetch();
-    return snips
+  snippets: function () {
+    var snippets = Snippets.find().fetch();
+    return snippets
   }
 });
 
