@@ -5,20 +5,25 @@
     <canvas id="analyser_render"></canvas>
   </div> -->
 
+  <form id="time-history">
+   <input type="datetime-local" name="rebase_time">
+   <input type="submit">
+ </form>
 
-  <div id="snippet_list">
 
-    {{#each samples}}
-      <audio-snippet id="{{_id}}" src="{{url}}"
-        data-cue-in="{{cueIn}}"
-        data-cue-out="{{cueOut}}"></audio-snippet>
-      <form id="update_cues">
-        <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
-        <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
-        <input type="submit">
-      </form>
-    {{/each}}
-  </div>
-  <button id="play_all">Play All</button>
-  <button id="pause_all">Pause All</button>
+ <div id="snippet_list">
+
+  {{#each snippets_for_rebase_date}}
+  <audio-snippet id="{{_id}}" src="{{url}}"
+  data-cue-in="{{cueIn}}"
+  data-cue-out="{{cueOut}}"></audio-snippet>
+  <form id="update_cues">
+    <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
+    <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
+    <input type="submit">
+  </form>
+  {{/each}}
+</div>
+<button id="play_all">Play All</button>
+<button id="pause_all">Pause All</button>
 </template>
