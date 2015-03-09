@@ -3,6 +3,8 @@
 var AudioSnippet = (function() {
   var AudioSnippetProto = Object.create(HTMLElement.prototype);
   var context = new AudioContext();
+  var color_arr = ["#00FF00", "00FFFF", "#FF3300", "#FFFF00", "#FF00FF"];
+  var rand_color = color_arr[Math.floor(Math.random()*color_arr.length)];
   var frameLooper = function () {
     $("audio-snippet").each(function(index, ele){
       ele.draw();
@@ -14,11 +16,14 @@ var AudioSnippet = (function() {
 
   AudioSnippetProto.createdCallback = function() {
     console.log('<audio-snippet>.createdCallback', this);
+    var snip = new Audio();
+    snip.controls = "true";
     this.analyser = context.createAnalyser();
     this.canvas = document.createElement('canvas');
+    this.audio = snip;
+    this.appendChild(snip);
     this.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
-    this.audio = new Audio();
     this.source = context.createMediaElementSource(this.audio);
     this.source.connect(this.analyser);
     this.analyser.connect(context.destination);
@@ -45,7 +50,7 @@ var AudioSnippet = (function() {
     var fbc_array = new Uint8Array(this.analyser.frequencyBinCount);
     this.analyser.getByteFrequencyData(fbc_array);
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.fillStyle = "#00CCFF" // Color of the bars
+    this.ctx.fillStyle = rand_color // Color of the bars
     var bars = 100;
     for (var i = 0; i < bars; i++) {
       var bar_x = i * 3,
@@ -60,10 +65,10 @@ return document.registerElement('audio-snippet', {prototype: AudioSnippetProto})
 
 //Snippets
 
-var stump = new Audio(["http://www.noiseaddicts.com/samples/4155.mp3"]);
-stump.controls = true;
-stump.loop = false;
-stump.autoplay = false;
+// var stump = new Audio(["http://www.noiseaddicts.com/samples/4155.mp3"]);
+// stump.controls = true;
+// stump.loop = false;
+// stump.autoplay = false;
 
 //Analyser
 
