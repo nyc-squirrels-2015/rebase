@@ -4,6 +4,8 @@ Bands = new Mongo.Collection("bands");
 
 Songs = new Mongo.Collection("songs");
 
+
+
   //ROUTES
 
     Router.route('/', function() {
@@ -26,7 +28,7 @@ if (Meteor.isClient) {
 
   if (Meteor.isServer) {
     Meteor.startup(function () {
-      // code to run on server at startup
+
     });
 
   }
