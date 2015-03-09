@@ -4,6 +4,8 @@ Bands = new Mongo.Collection("bands");
 
 Songs = new Mongo.Collection("songs");
 
+
+
   //ROUTES
 
     Router.route('/', function() {
