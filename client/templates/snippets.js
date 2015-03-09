@@ -1,7 +1,8 @@
 Template.snippets.helpers({
   samples: function () {
-    return Snippets.find().fetch()
-  },
+    var snips = Snippets.find().fetch();
+    return snips
+  }
 });
 
 Template.snippets.events({
@@ -11,7 +12,18 @@ Template.snippets.events({
     var cueIn = parseInt(event.target[0].value);
     var cueOut = parseInt(event.target[1].value);
     Snippets.update({"_id" : snippetId}, {$set: {cueIn: cueIn, cueOut: cueOut}}
-    );
-    console.log("this", this)
+      );
+  },
+
+  'play #audio_box > audio': function (event) {
+    var snippys = Snippets.find().fetch();
+    event.target.ontimeupdate = function() {
+      snippys.forEach(function(snip, index, array){
+        if (event.target.currentTime >= snip.cueIn) {
+          $("#" + snip._id)[0].play();
+        }
+      })
+    };
   }
+
 });
