@@ -16,14 +16,3 @@ Template.create_song.events({
 });
 
 
-/*
-//Song Document
-  song ={
-    song_id =
-    lyrics = ""
-    title = ""
-  }
-
-
-*/
-

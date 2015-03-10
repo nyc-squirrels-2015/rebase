@@ -2,7 +2,10 @@
 
   <ul>
     {{#each display_songs}}
-      <a href='session'> {{name}}</a>
+      <a href='session' id="{{_id}}">{{name}}</a>
+      <form >
+      	<input type="hidden" value = "{{_id}}">
+      </form>
     {{/each}}
   </ul>
 
