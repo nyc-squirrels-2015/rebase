@@ -91,6 +91,10 @@ Template.snippets.events({
     //add newHistory to Histories collection
     Histories.insert(newHistory)
 
- }
+ },
+
+  $(".remove_snippets").click(function(){
+    $("audio").remove("#{{_id}}")
+  })
 
 });
