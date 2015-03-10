@@ -38,7 +38,12 @@ if (Meteor.isClient) {
 
         return Sessions.remove({});
 
-      }
+      },
+
+      // removefromhistory : function(hisid){
+
+      //   return Histories.remove({"_id":{ id})
+      // }
 
       });
 
