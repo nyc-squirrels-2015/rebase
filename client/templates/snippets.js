@@ -71,7 +71,6 @@ Template.snippets.events({
       sessionSnippets.push(snippet)
     }
 
-
     console.log(sessionSnippets)
     var newHistory = new Object();
     newHistory.ts = new Date();
@@ -79,6 +78,7 @@ Template.snippets.events({
 
     console.log(newHistory);
 
+    //add newHistory to Histories collection
 
  }
 
