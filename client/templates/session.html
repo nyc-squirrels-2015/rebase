@@ -1,9 +1,23 @@
 <template name="session">
-  <h3> Sesssion </h3>
+  <h3> Session </h3>
   <hr>
-  {{> uploadForm}}
-  <hr>
+  <div class="flex flex-center">
+    <div class="flex-auto px2 py4 blue border border-blue">
+      <a href="#">Upload a File from your computer</a>
+      <br>
+      <br>
+      {{> uploadForm}}
+    </div>
+
+  </div>
+  <div class="flex flex-center">
+    <div class="flex-auto px2 py4 blue border border-blue">
+      <a href="#">Enter a streaming audio URL from the Web.</a>
+      <br>
+      <br>
     {{> new_snippet_form}}
+    </div>
+  </div>
   <hr>
   <hr>
   {{> timer}}
@@ -13,10 +27,10 @@
 
   {{> snippets}}
 
+
   <form id="welcomeRoute" action="/">
     <input type ="submit" value="Leave Session">
   </form>
-
-
 </template>
+
 
