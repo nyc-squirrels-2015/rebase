@@ -50,7 +50,7 @@ var AudioSnippet = (function() {
 
         },
         axis: 'x',
-
+        containment: 'document',
         stop: function(){
           $('#currentCue'+ currentSnippet.id).text("Cue In: " + currentSnippet.dataset.cueIn + " Cue Out: " + currentSnippet.dataset.cueOut)
 
