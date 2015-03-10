@@ -10,5 +10,18 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
+.login-link-and-dropdown-list {
+  color:white;
+}
+
+.login-link-text {
+  color:white;
+  font-style:none;
+}
+
+a#login-sign-in-link {
+  text-decoration: none;
+}
+
 
 
