@@ -30,7 +30,7 @@ var AudioSnippet = (function() {
   };
 
   AudioSnippetProto.attachedCallback = function() {
-    console.log('<audio-snippet>.createdCallback', this);
+    console.log('<audio-snippet>.attachedCallback', this);
   };
 
   AudioSnippetProto.detachedCallback = function() {
@@ -72,7 +72,7 @@ return document.registerElement('audio-snippet', {prototype: AudioSnippetProto})
 
 //Analyser
 
-var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
+// var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 
 //Initialize MP3 player page loads HTML
 
@@ -108,33 +108,33 @@ var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, b
 
 //AudioControls
 
-$(document).ready(function(){
-  var $streams = $('audio')
-  var initialStream = $streams[0];
-  var nextStream = $streams[1];
+// $(document).ready(function(){
+//   var $streams = $('audio')
+//   var initialStream = $streams[0];
+//   var nextStream = $streams[1];
 
-  $("#new_snippet").on('submit', function(event){
-    event.preventDefault();
-    var snippetUrl = event.target[0].value;
-    SnippetController.createNewSnippet(snippetUrl);
-  })
+//   $("#new_snippet").on('submit', function(event){
+//     event.preventDefault();
+//     var snippetUrl = event.target[0].value;
+//     SnippetController.createNewSnippet(snippetUrl);
+//   })
 
-  $("#play_all").on('click', function(event){
-    event.preventDefault();
-    var $streams = $('audio')
-    $streams.each(function(index, el){
-      el.play();
-    })
-  })
+//   $("#play_all").on('click', function(event){
+//     event.preventDefault();
+//     var $streams = $('audio')
+//     $streams.each(function(index, el){
+//       el.play();
+//     })
+//   })
 
-  $("#pause_all").on('click', function(event){
-    event.preventDefault();
-    var $streams = $('audio')
-    $streams.each(function(index, el){
-      el.pause();
-    })
-  })
+//   $("#pause_all").on('click', function(event){
+//     event.preventDefault();
+//     var $streams = $('audio')
+//     $streams.each(function(index, el){
+//       el.pause();
+//     })
+//   })
 
 
-});
+// });
 
