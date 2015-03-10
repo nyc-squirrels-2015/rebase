@@ -1,0 +1,29 @@
+<template name="history_temp_container">
+  {{> Template.dynamic template=whichOne}}
+</template>
+
+<template name="history_selector">
+  <form id="history-selector">
+    Version:<select name="histories">
+      <option value="current">current</option>
+      {{#each ts_from_history}}
+      <option value="{{ts.toISOString}}">{{ts}}</option>
+      {{/each}}
+    </select>
+    <br><br>
+    <input type="submit">
+  </form>
+</template>
+
+<!-- <template name="snippet_history">
+  {{#each snippets_from_history}}
+  <audio-snippet id="{{_id}}" src="{{url}}"
+  data-cue-in="{{cueIn}}"
+  data-cue-out="{{cueOut}}"></audio-snippet>
+  <form id="update_cues">
+    <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
+    <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
+    <input type="submit">
+  </form>
+  {{/each}}
+</template> -->

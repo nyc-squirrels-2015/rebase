@@ -1,7 +1,15 @@
 Template.snippets.helpers({
   samples: function () {
-    var snips = Snippets.find().fetch();
-    return snips
+    var required = Session.get('snippet_list');
+    if (required === 'current' || !required) {
+      return  Snippets.find().fetch();
+    } else {
+      var d = new Date(required);
+      console.log(d);
+      return Histories.findOne({ts: d}).snippets;
+    }
+
+
   },
 
   snippets_for_rebase_date: function() {
@@ -66,7 +74,9 @@ Template.snippets.events({
       //will fill new snippet object with it's info
       var snippet = new Object();
       snippet.id = currentSnippetId;
-      snippet.data = snippetInfoHash;
+      snippet.url = snippetInfoHash.src;
+      snippet.cueIn = snippetInfoHash.cueIn;
+      snippet.cueOut = snippetInfoHash.cueOut;
 
       sessionSnippets.push(snippet)
     }
@@ -79,6 +89,7 @@ Template.snippets.events({
     console.log(newHistory);
 
     //add newHistory to Histories collection
+    Histories.insert(newHistory)
 
  }
 
