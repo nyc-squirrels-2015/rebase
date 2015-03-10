@@ -41,6 +41,28 @@ Template.snippets.events({
    // console.log(rebase_date);
    Session.set('rebase_date', rebase_date);
    console.log(Session.get('rebase_date'))
+ },
+
+ 'submit #saver': function(event){
+    event.preventDefault();
+
+    var newHistory = new Date();
+    var currentSnippets = $('audio-snippet')
+
+    var history = [];
+
+    for(var i = 0; i < currentSnippets.length; i++){
+
+       history.push(currentSnippets[i])
+
+
+
+    }
+
+
+    console.log("history",history);
+
+
  }
 
 });
