@@ -30,7 +30,26 @@ var AudioSnippet = (function() {
   };
 
   AudioSnippetProto.attachedCallback = function() {
+    var that = this;
     console.log('<audio-snippet>.createdCallback', this);
+    $( this ).
+    $( this ).draggable(
+      {
+        drag: function(){
+
+            var offset = $(that).offset();
+            that.dataset.cueIn = offset.left;
+            console.log(that.dataset.cueIn)
+
+
+        },
+
+        axis: 'x'
+
+      }
+
+      );
+
   };
 
   AudioSnippetProto.detachedCallback = function() {
