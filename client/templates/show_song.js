@@ -15,18 +15,19 @@ Template.show_song.helpers({
 
 
   return songs
-  }
+  },
+
 
 });
 
+
 Template.show_song.events({
 	"submit #songName" : function(event){
+		event.preventDefault();
 
-		var sessionSongId = $("#songNameid").attr("name")
-		console.log(sessionSongId)
-		Session.set("sessionSongid", sessionSongId) 
-	
-
-
-			}
+		var sessionSongId = $("#songNameid").attr("name");
+		Session.set("sessionSongId", sessionSongId);
+		
+		}
 })
+
