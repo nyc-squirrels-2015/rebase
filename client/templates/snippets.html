@@ -23,7 +23,6 @@
 
 
   {{#each samples}}
-  
   <audio-snippet id="{{_id}}" src="{{url}}"
   data-cue-in="{{cueIn}}"
   data-cue-out="{{cueOut}}">
@@ -33,8 +32,7 @@
 
 
 
-
-  <form id="update_cues">
+  <form id="update_cues{{_id}}">
     <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
     <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
     <input type="submit">
