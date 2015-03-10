@@ -18,9 +18,11 @@
     <input type="submit" value="Save History">
   </form>
   <hr>
+  {{> history_selector}}
   <br>
 
-  {{#each snippets_for_rebase_date}}
+
+  {{#each samples}}
   <audio-snippet id="{{_id}}" src="{{url}}"
   data-cue-in="{{cueIn}}"
   data-cue-out="{{cueOut}}"></audio-snippet>
