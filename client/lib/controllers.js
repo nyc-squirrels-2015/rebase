@@ -30,26 +30,25 @@ var AudioSnippet = (function() {
   };
 
   AudioSnippetProto.attachedCallback = function() {
-    var that = this;
-    console.log('<audio-snippet>.createdCallback', this);
-    $( this ).
-    $( this ).draggable(
+    //Draggable Functionality to Change CueIn/CueOut
+    var currentSnippet = this;
+    $( currentSnippet ).draggable(
       {
         drag: function(){
+            var offset = $(currentSnippet).offset();
+            newCueIn = offset.left;
+            newCueOut = offset.right + 100;
+            currentSnippet.dataset.cueIn = offset.left;
 
-            var offset = $(that).offset();
-            that.dataset.cueIn = offset.left;
-            console.log(that.dataset.cueIn)
+           Snippets.update({_id: currentSnippet.id}, {cueIn: newCueIn});
 
+           var yo = Snippets.find({_id: currentSnippet.id})
 
+           console.log(yo)
         },
-
         axis: 'x'
-
       }
-
-      );
-
+    );
   };
 
   AudioSnippetProto.detachedCallback = function() {
