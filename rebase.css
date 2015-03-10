@@ -4,10 +4,11 @@ html {
 
 }
 
-#rebase-header {
+#rebass-header {
   text-align: center;
-  font-size:40px;
+  font-size:60px;
   font-family: 'Montserrat', sans-serif;
+  color:white;
 }
 
 .login-link-and-dropdown-list {
@@ -22,6 +23,18 @@ html {
 a#login-sign-in-link {
   text-decoration: none;
 }
+
+.clearfix {
+  background-color:#594F4F;
+}
+
+body {
+  background-color:#547980;
+}
+
+
+
+
 
 
 
