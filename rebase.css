@@ -1,14 +1,20 @@
 /* CSS declarations go here */
 
 html {
+  /*background-color:#FCFBE3;*/
+  background-color:white;
+}
 
+body {
+ /*background-color:#FCFBE3;*/
+ background-color: white;
 }
 
 #rebass-header {
   text-align: center;
-  font-size:60px;
+  font-size:40px;
   font-family: 'Montserrat', sans-serif;
-  color:black;
+  /*color:white;*/
 }
 
 .login-link-and-dropdown-list {
@@ -25,7 +31,12 @@ a#login-sign-in-link {
 }
 
 .clearfix {
+  background-color:black;
 
+}
+
+.button {
+  background-color:black;
 }
 
 
