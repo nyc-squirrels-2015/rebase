@@ -1,7 +1,9 @@
 <template name="session">
   <h3> Session </h3>
   <hr>
-  {{> uploadForm}}
+  <div id="upload-file-div">
+    {{> uploadForm}}
+  </div>
   <hr>
     {{> new_snippet_form}}
   <hr>
@@ -13,10 +15,11 @@
 
   {{> snippets}}
 
+
   <form id="welcomeRoute" action="/">
     <input type ="submit" value="Leave Session">
   </form>
-
-
+=======
 </template>
+
 

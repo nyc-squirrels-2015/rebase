@@ -3,6 +3,15 @@
 html {
   /*background-color:#FCFBE3;*/
   background-color:white;
+  background-image:url('https://s-media-cache-ak0.pinimg.com/736x/40/03/dc/4003dc97685d7efd91248d5756598f2e.jpg');
+  background-repeat: no-repeat;
+  background-size:auto;
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  z-index: -1;
+  position:absolute;
+
 }
 
 body {
@@ -38,6 +47,18 @@ a#login-sign-in-link {
 .button {
   background-color:black;
 }
+
+#play_all {
+  background-color: black;
+  color:white;
+}
+
+#pause_all {
+  background-color:black;
+  color:white;
+}
+
+
 
 
 
