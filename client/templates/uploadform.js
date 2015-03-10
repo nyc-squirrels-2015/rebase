@@ -13,6 +13,7 @@ Template.uploadForm.events({
     
       var file = document.getElementById('file-select').files[0];
 
+
       if (file) {
         var preferredName = fixUploadFileName(file);
         var metaContext = {preferredName: preferredName }
@@ -22,9 +23,9 @@ Template.uploadForm.events({
             console.log(error);
             return;
           } else {
-            var sessionId = Session.get('sessionSongId')
-            console.log(sessionId)
-            var snip = {title: preferredName, url:'http://d2j1aentbotvl3.cloudfront.net/' + preferredName, cueIn: 0, cueOut:0, songId: sessionId };
+            // var sessionId = Session.get('sessionSongId')
+            // console.log(sessionId)
+            var snip = {title: preferredName, url:'http://d2j1aentbotvl3.cloudfront.net/' + preferredName, cueIn: 0, cueOut:0 };
             Snippets.insert(snip);
             console.log('snip', snip);
           }
