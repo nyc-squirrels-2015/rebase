@@ -50,19 +50,19 @@ Template.snippets.events({
     var currentSnippets = $('audio-snippet')
 
     var history = [];
+    var cueDataSet = [];
+
 
     for(var i = 0; i < currentSnippets.length; i++){
-
-       history.push(currentSnippets[i])
-
-
+       history.push(currentSnippets[i].id)
+       console.log("cueIn",currentSnippets[i].dataset.cueIn)
+       console.log("cueOut",currentSnippets[i].dataset.cueOut)
+       console.log("src",currentSnippets[i].audio.src)
 
     }
 
-
-    console.log("history",history);
-
-
+    // Histories.insert({newHistory : {history });
+    console.log("history", history);
  }
 
 });
