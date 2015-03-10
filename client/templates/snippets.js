@@ -94,8 +94,9 @@ Template.snippets.events({
  },
 
  "click .remove_snippets" :function(event){
-    console.log(event.target)
-    $("snippets").remove("_id")
+    console.log(this._id)
+    var snippetId = this._id
+    Snippets.remove({"_id": snippetId})
 
 
  }
