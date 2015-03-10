@@ -12,7 +12,11 @@
     </div>
   </nav>
 
-{{> index_page}}
+{{#if currentUser}}
+  {{> session}}
+{{else}}
+  {{> index_page}}
+{{/if}}
 
 </body>
 
