@@ -39,21 +39,22 @@ var AudioSnippet = (function() {
             var offset = $(currentSnippet).offset();
             var newCueIn = (offset.left)/20;
             $('#'+ currentSnippet.id)
+            var newCueOut = newCueIn + 2;
 
             /* var newCueOut = newCueIn + Track Length*/
             currentSnippet.dataset.cueIn = newCueIn;
+
+            currentSnippet.dataset.cueOut = newCueOut;
 
             // currentSnippet.dataset.cueOut = newCueIn + 20;
 
         },
         axis: 'x',
-        containment: 'document',
+
         stop: function(){
-          $('#currentCues').text("Cue In: " + currentSnippet.dataset.cueIn + " Cue Out: " + currentSnippet.dataset.cueOut)
+          $('#currentCue'+ currentSnippet.id).text("Cue In: " + currentSnippet.dataset.cueIn + " Cue Out: " + currentSnippet.dataset.cueOut)
 
           var duck = $('#'+ currentSnippet.id).children('audio').duration
-          console.log("what i need", duck)
-
         }
       }
     );
