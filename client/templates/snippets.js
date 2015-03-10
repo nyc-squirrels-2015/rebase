@@ -99,6 +99,7 @@ Template.snippets.events({
   console.log(snippetId)
   console.log("audio-snippet"+"."+snippetId)
   $("#"+snippetId).remove()
+  $("#update_cues"+snippetId).remove()
  }
  
 
