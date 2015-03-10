@@ -8,7 +8,7 @@ html {
   text-align: center;
   font-size:60px;
   font-family: 'Montserrat', sans-serif;
-  color:white;
+  color:black;
 }
 
 .login-link-and-dropdown-list {
@@ -25,12 +25,9 @@ a#login-sign-in-link {
 }
 
 .clearfix {
-  background-color:#594F4F;
+
 }
 
-body {
-  background-color:#547980;
-}
 
 
 
