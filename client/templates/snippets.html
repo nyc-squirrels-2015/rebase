@@ -25,8 +25,14 @@
   {{#each samples}}
   <audio-snippet id="{{_id}}" src="{{url}}"
   data-cue-in="{{cueIn}}"
-  data-cue-out="{{cueOut}}"></audio-snippet>
-  <form id="update_cues">
+  data-cue-out="{{cueOut}}">
+  <button class="remove_snippets"> Remove </button>
+  </audio-snippet>
+
+
+
+
+  <form id="update_cues{{_id}}">
     <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
     <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
     <input type="submit">

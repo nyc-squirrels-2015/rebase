@@ -87,10 +87,18 @@ Template.snippets.events({
     newHistory.snippets = sessionSnippets
 
     console.log(newHistory);
+    console.log(newHistory._id)
 
     //add newHistory to Histories collection
     Histories.insert(newHistory)
 
+ },
+
+ "click .remove_snippets": function(event){
+  var snippetId= this._id
+  $("#"+snippetId).remove()
+  $("#update_cues"+snippetId).remove()
  }
+ 
 
 });
