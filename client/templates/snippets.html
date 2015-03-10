@@ -20,6 +20,7 @@
   <hr>
   {{> history_selector}}
   <br>
+  <br>
 
 
   {{#each samples}}
@@ -37,6 +38,10 @@
     <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
     <input type="submit">
   </form>
+  <div id="currentCues"></div>
+
+
+
   {{/each}}
 </div>
 <button id="play_all">Play All</button>

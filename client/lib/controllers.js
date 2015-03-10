@@ -30,7 +30,32 @@ var AudioSnippet = (function() {
   };
 
   AudioSnippetProto.attachedCallback = function() {
-    console.log('<audio-snippet>.createdCallback', this);
+    //Draggable Functionality to Change CueIn/CueOut
+    var currentSnippet = this;
+    $( currentSnippet ).draggable(
+      {
+        drag: function(){
+            var offset = $(currentSnippet).offset();
+            var newCueIn = (offset.left)/20;
+            $('#'+ currentSnippet.id)
+
+            /* var newCueOut = newCueIn + Track Length*/
+            currentSnippet.dataset.cueIn = newCueIn;
+
+            // currentSnippet.dataset.cueOut = newCueIn + 20;
+
+        },
+        axis: 'x',
+        containment: 'document',
+        stop: function(){
+          $('#currentCues').text("Cue In: " + currentSnippet.dataset.cueIn + " Cue Out: " + currentSnippet.dataset.cueOut)
+
+          var duck = $('#'+ currentSnippet.id).children('audio').duration
+          console.log("what i need", duck)
+
+        }
+      }
+    );
   };
 
   AudioSnippetProto.detachedCallback = function() {
