@@ -4,6 +4,7 @@ Bands = new Mongo.Collection("bands");
 
 Songs = new Mongo.Collection("songs");
 
+Histories = new Mongo.Collection("histories");
 
 
   //ROUTES
