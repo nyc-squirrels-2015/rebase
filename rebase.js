@@ -6,6 +6,8 @@ Songs = new Mongo.Collection("songs");
 
 Histories = new Mongo.Collection("histories");
 
+Sessions = new Mongo.Collection("sessions")
+
 
   //ROUTES
 

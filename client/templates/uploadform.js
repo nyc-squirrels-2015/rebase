@@ -25,7 +25,7 @@ Template.uploadForm.events({
           } else {
             var sessionId = Session.get('sessionSongId')
             console.log(sessionId)
-            var snip = {title: preferredName, url:'http://d2j1aentbotvl3.cloudfront.net/' + preferredName, cueIn: 0, cueOut:0 songId: sessionId};
+            var snip = {title: preferredName, url:'http://d2j1aentbotvl3.cloudfront.net/' + preferredName, cueIn: 0, cueOut:0, songId: sessionId};
             Snippets.insert(snip);
             console.log('snip', snip);
           }

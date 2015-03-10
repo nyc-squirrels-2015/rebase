@@ -15,6 +15,9 @@ Template.show_song.events({
 	"submit #songName" : function(event){
 		event.preventDefault();
 		var sessionSongId = $("#songNameid").attr("name");
+		Sessions.insert({
+			id : sessionSongId 
+		})
 		Session.set("sessionSongId", sessionSongId);
 	
 
