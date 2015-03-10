@@ -93,8 +93,12 @@ Template.snippets.events({
 
  },
 
-  $(".remove_snippets").click(function(){
-    $("audio").remove("#{{_id}}")
-  })
+ "click .remove_snippets" :function(event){
+    console.log(event.target)
+    $("snippets").remove("_id")
+
+
+ }
+ 
 
 });
