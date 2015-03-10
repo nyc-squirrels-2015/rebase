@@ -4,7 +4,7 @@
 /*@import "basscss-utilities";*/
 
 html {
-  /*background-color:#FCFBE3;*/
+  background-color:#FCFBE3;
   background-color:white;
   background-image:url('https://s-media-cache-ak0.pinimg.com/736x/40/03/dc/4003dc97685d7efd91248d5756598f2e.jpg');
   background-repeat: no-repeat;
@@ -12,13 +12,12 @@ html {
   background-position: center;
   background-attachment: fixed;
   -webkit-background-size: cover;
-  z-index: -1;
   position:absolute;
 
 }
 
 body {
- /*background-color:#FCFBE3;*/
+ background-color:#FCFBE3;
  background-color: white;
 }
 
@@ -45,7 +44,7 @@ a#login-sign-in-link {
 }
 
 .clearfix {
-  /*background-color:#FF4136;*/
+  background-color:#FF4136;
   background-color: black;
   width:100%;
 }
@@ -65,25 +64,12 @@ a#login-sign-in-link {
 }
 
 .fa-headphones {
-  /*background-color:#FF4136;*/
-  /*background-color: black;*/
+  background-color:#FF4136;
+  background-color: black;
 }
 
 .fa-search {
   background-color:black;
   color:white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
