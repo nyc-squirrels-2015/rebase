@@ -1,1 +1,14 @@
 /* CSS declarations go here */
+
+html {
+
+}
+
+#rebase-header {
+  text-align: center;
+  font-size:40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
