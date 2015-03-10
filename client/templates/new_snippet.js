@@ -18,8 +18,8 @@ Template.new_snippet_form.events({
   "submit #new_snippet": function(event){
     event.preventDefault();
     var url = event.target.url.value;
-    var songId = Session.get("sessionSongId")
-    console.log(songId);
+    var songId = Sessions.findOne();
+    console.log("songId", songId);
     var title = event.target.title.value;
     new_snip = new Snippet(url, title, songId);
     console.log("snippet info",new_snip)
