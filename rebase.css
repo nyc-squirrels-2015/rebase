@@ -2,3 +2,7 @@
 
 /*@import "basscss-base";*/
 /*@import "basscss-utilities";*/
+
+#transparent-box {
+  opacity:0.8;
+}
