@@ -6,6 +6,8 @@ Songs = new Mongo.Collection("songs");
 
 Histories = new Mongo.Collection("histories");
 
+Sessions = new Mongo.Collection("sessions")
+
 
   //ROUTES
 
@@ -29,6 +31,16 @@ if (Meteor.isClient) {
 
   if (Meteor.isServer) {
     Meteor.startup(function () {
+
+      return Meteor.methods({
+
+      killSession: function() {
+
+        return Sessions.remove({});
+
+      }
+
+      });
 
     });
 

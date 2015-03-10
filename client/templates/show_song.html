@@ -2,7 +2,10 @@
 
   <ul>
     {{#each display_songs}}
-      <a href='session'> {{name}}</a>
+      <form id="songName" action="/session">
+      	<input id ="songNameid" type="hidden" name = "{{_id}}">
+      	<input type="submit" value ="{{name}}">
+      </form>
     {{/each}}
   </ul>
 
