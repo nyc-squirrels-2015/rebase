@@ -8,16 +8,16 @@ Template.snippets.helpers({
       console.log(d);
       return Histories.findOne({ts: d}).snippets;
     }
-
-
   },
 
-  snippets_for_rebase_date: function() {
-    var snips = Snippets.find({createdAt:{$lt:Session.get('rebase_date')}}).fetch();
-    console.log(snips)
-    return snips
 
-  }
+
+  // snippets_for_rebase_date: function() {
+  //   var snips = Snippets.find({createdAt:{$lt:Session.get('rebase_date')}}).fetch();
+  //   console.log(snips)
+  //   return snips
+
+  // }
 });
 
 Template.snippets.events({
