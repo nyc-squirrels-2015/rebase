@@ -41,6 +41,45 @@ Template.snippets.events({
    // console.log(rebase_date);
    Session.set('rebase_date', rebase_date);
    console.log(Session.get('rebase_date'))
+ },
+
+ 'submit #saver': function(event){
+    event.preventDefault();
+
+
+    var currentSnippets = $('audio-snippet')
+
+    var sessionSnippets = [];
+    var cueDataSet = [];
+
+
+    for(var i = 0; i < currentSnippets.length; i++){
+      //grab all ids
+      //grab all info an object
+       var snippetInfoHash = {
+                        cueIn: currentSnippets[i].dataset.cueIn,
+                        cueOut:currentSnippets[i].dataset.cueOut,
+                        src:currentSnippets[i].audio.src}
+
+      var currentSnippetId = currentSnippets[i].id +'';
+
+      //will fill new snippet object with it's info
+      var snippet = new Object();
+      snippet.id = currentSnippetId;
+      snippet.data = snippetInfoHash;
+
+      sessionSnippets.push(snippet)
+    }
+
+    console.log(sessionSnippets)
+    var newHistory = new Object();
+    newHistory.ts = new Date();
+    newHistory.snippets = sessionSnippets
+
+    console.log(newHistory);
+
+    //add newHistory to Histories collection
+
  }
 
 });
