@@ -3,7 +3,7 @@
   <ul>
     {{#each display_songs}}
       <form id="songName" action="/session">
-      	<input type="hidden" name = "{{_id}}">
+      	<input id ="songNameid" type="hidden" name = "{{_id}}">
       	<input type="submit" value ="{{name}}">
       </form>
     {{/each}}

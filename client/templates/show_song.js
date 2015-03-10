@@ -21,9 +21,12 @@ Template.show_song.helpers({
 
 Template.show_song.events({
 	"submit #songName" : function(event){
-		event.preventDefault();
 
-		var sessionSongId = event.target.name.value;
-		console.log(sessionSongId)  
-	}
+		var sessionSongId = $("#songNameid").attr("name")
+		console.log(sessionSongId)
+		Session.set("sessionSongid", sessionSongId) 
+	
+
+
+			}
 })
