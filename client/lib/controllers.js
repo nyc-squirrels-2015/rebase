@@ -36,17 +36,18 @@ var AudioSnippet = (function() {
       {
         drag: function(){
             var offset = $(currentSnippet).offset();
-            newCueIn = offset.left;
-            newCueOut = offset.right + 100;
-            currentSnippet.dataset.cueIn = offset.left;
+            var newCueIn = (offset.left)/20;
 
-           Snippets.update({_id: currentSnippet.id}, {cueIn: newCueIn});
-
-           var yo = Snippets.find({_id: currentSnippet.id})
-
-           console.log(yo)
+            /* var newCueOut = newCueIn + Track Length*/
+            currentSnippet.dataset.cueIn = newCueIn;
+            currentSnippet.dataset.cueOut = newCueIn + 20;
         },
-        axis: 'x'
+        axis: 'x',
+        stop: function(){
+          $('#currentCues').text("Cue In: " + currentSnippet.dataset.cueIn + " Cue Out: " + currentSnippet.dataset.cueOut)
+
+
+        }
       }
     );
   };
