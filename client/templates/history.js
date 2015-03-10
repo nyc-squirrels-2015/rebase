@@ -20,11 +20,11 @@ Template.history_selector.events({
   }
 });
 
-Template.snippet_history.helpers({
-  snippets_from_history: function () {
-    var oldSnippets = Histories.find({ts: selectedTimeInHistory})
-  }
-});
+// Template.snippet_history.helpers({
+//   snippets_from_history: function () {
+//     var oldSnippets = Histories.find({ts: selectedTimeInHistory})
+//   }
+// });
 
 // Template.history_temp_container.helpers({
 //   whichOne: function () {
