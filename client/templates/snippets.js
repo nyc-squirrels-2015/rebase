@@ -46,23 +46,40 @@ Template.snippets.events({
  'submit #saver': function(event){
     event.preventDefault();
 
-    var newHistory = new Date();
+
     var currentSnippets = $('audio-snippet')
 
-    var history = [];
+    var sessionSnippets = [];
     var cueDataSet = [];
 
 
     for(var i = 0; i < currentSnippets.length; i++){
-       history.push(currentSnippets[i].id)
-       console.log("cueIn",currentSnippets[i].dataset.cueIn)
-       console.log("cueOut",currentSnippets[i].dataset.cueOut)
-       console.log("src",currentSnippets[i].audio.src)
+      //grab all ids
+      //grab all info an object
+       var snippetInfoHash = {
+                        cueIn: currentSnippets[i].dataset.cueIn,
+                        cueOut:currentSnippets[i].dataset.cueOut,
+                        src:currentSnippets[i].audio.src}
 
+      var currentSnippetId = currentSnippets[i].id +'';
+
+      //will fill new snippet object with it's info
+      var snippet = new Object();
+      snippet.id = currentSnippetId;
+      snippet.data = snippetInfoHash;
+
+      sessionSnippets.push(snippet)
     }
 
-    // Histories.insert({newHistory : {history });
-    console.log("history", history);
+
+    console.log(sessionSnippets)
+    var newHistory = new Object();
+    newHistory.ts = new Date();
+    newHistory.snippets = sessionSnippets
+
+    console.log(newHistory);
+
+
  }
 
 });
