@@ -4,15 +4,19 @@
 </head>
 
 <body>
-  <nav class="clearfix white">
-    <div class="sm-col">
+  <nav class="clearfix white bg-black">
+    <div class="">
       <a href="/" class="button py2 button-transparent"><i class="fa fa-headphones fa-3x"></i></a>
       <a href="#" class="button py2 button-transparent">{{> loginButtons}}</a>
-  <!-- <h1>REBASS</h1> -->
+
     </div>
   </nav>
 
-
+{{#if currentUser}}
+  {{> session}}
+{{else}}
+  {{> index_page}}
+{{/if}}
 
 </body>
 
