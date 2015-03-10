@@ -16,10 +16,8 @@ Template.show_song.events({
 		event.preventDefault();
 		var sessionSongId = $("#songNameid").attr("name");
 		Sessions.insert({
-			id : sessionSongId 
+			songId : sessionSongId
 		})
-		Session.set("sessionSongId", sessionSongId);
-	
 
 		Router.go("/session")
 	}

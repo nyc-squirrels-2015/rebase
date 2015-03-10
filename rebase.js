@@ -32,6 +32,16 @@ if (Meteor.isClient) {
   if (Meteor.isServer) {
     Meteor.startup(function () {
 
+      return Meteor.methods({
+
+      killSession: function() {
+
+        return Sessions.remove({});
+
+      }
+
+      });
+
     });
 
   }
