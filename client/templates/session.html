@@ -1,11 +1,23 @@
 <template name="session">
   <h3> Session </h3>
   <hr>
-  <div id="upload-file-div">
-    {{> uploadForm}}
+  <div class="flex flex-center">
+    <div class="flex-auto px2 py4 blue border border-blue">
+      <a href="#">Upload a File from your computer</a>
+      <br>
+      <br>
+      {{> uploadForm}}
+    </div>
+
   </div>
-  <hr>
+  <div class="flex flex-center">
+    <div class="flex-auto px2 py4 blue border border-blue">
+      <a href="#">Enter a streaming audio URL from the Web.</a>
+      <br>
+      <br>
     {{> new_snippet_form}}
+    </div>
+  </div>
   <hr>
   <hr>
   {{> timer}}
