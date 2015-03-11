@@ -2,8 +2,17 @@ var selectedTimeInHistory
 
 Template.history_selector.helpers({
   ts_from_history: function () {
-    var timestamps = Histories.find().fetch()
-    return timestamps
+    var allHistory = Histories.find().fetch();
+    // if history contains snippets with snogId of session return those collections
+    var historyToReturn = [];
+    allHistory.forEach(function (hist, index, array) {
+      if (hist.songId === Session.get("songId")) {
+        console.log(hist);
+        historyToReturn.push(hist)
+      };
+    });
+
+    return historyToReturn
   }
 });
 
