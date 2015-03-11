@@ -1,6 +1,6 @@
 <template name="session">
 
-  <h1>{{songName}}</h1>
+  <h1 class="song-name">{{songName}}</h1>
 
   <div class="clearfix outline-blue">
 
@@ -10,15 +10,17 @@
   </div>
 <hr>
 
-  {{> snippets}}
+    {{> snippets}}
 
 <div class="upload_box">
         {{> uploadForm}}
+        <br>
+        <form id="welcomeRoute" action="/">
+        <input type ="submit" value="Leave Session">
+        </form>
 </div>
 
-<form id="welcomeRoute" action="/">
-    <input type ="submit" value="Leave Session">
-</form>
+
 </template>
 
 
