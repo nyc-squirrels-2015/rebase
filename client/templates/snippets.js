@@ -66,8 +66,9 @@ Template.snippets.events({
       //grab all info an object
        var snippetInfoHash = {
                         cueIn: currentSnippets[i].dataset.cueIn,
-                        cueOut:currentSnippets[i].dataset.cueOut,
-                        src:currentSnippets[i].audio.src}
+                        cueOut: currentSnippets[i].dataset.cueOut,
+                        src: currentSnippets[i].audio.src,
+                        songId: currentSnippets[i].dataset.songId}
 
       var currentSnippetId = currentSnippets[i].id +'';
 
@@ -77,17 +78,18 @@ Template.snippets.events({
       snippet.url = snippetInfoHash.src;
       snippet.cueIn = snippetInfoHash.cueIn;
       snippet.cueOut = snippetInfoHash.cueOut;
+      snippet.songId = snippetInfoHash.songId;
 
       sessionSnippets.push(snippet)
     }
 
-    console.log(sessionSnippets)
+    console.log("sessions snippets ", sessionSnippets)
     var newHistory = new Object();
     newHistory.ts = new Date();
     newHistory.snippets = sessionSnippets
 
-    console.log(newHistory);
-    console.log(newHistory._id)
+    console.log("new history ", newHistory);
+    console.log("new history ID ", newHistory._id)
 
     //add newHistory to Histories collection
     Histories.insert(newHistory)
@@ -99,6 +101,6 @@ Template.snippets.events({
   $("#"+snippetId).remove()
   $("#update_cues"+snippetId).remove()
  }
- 
+
 
 });
