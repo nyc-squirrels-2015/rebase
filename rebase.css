@@ -13,3 +13,26 @@
   color:white;
 }
 
+.container-foo{
+  background-image:url('imgs/background_image.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 100vh;
+}
+
+.container-foo > h1{
+  margin: 0px;
+}
+
+body section {
+
+}
+
+#index-section {
+  max-width:100%;
+  margin-left: inherit;
+  margin-right: inherit;
+  background-color: white;
+
+}
+
