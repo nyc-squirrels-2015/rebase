@@ -1,0 +1,31 @@
+.snippets_box{
+  background:white;
+  height:150px;
+
+}
+
+.upload_box{
+  position:relative;
+  text-align: center;
+  margin-top:-25px;
+  margin-bottom: 10px;
+
+}
+.timer_box{
+  position:relative;
+  text-align: center;
+
+}
+
+#song-name{
+  text-align:center;
+}
+
+
+.time_delete button{
+  position:absolute;
+  left:500px;
+
+}
+
+

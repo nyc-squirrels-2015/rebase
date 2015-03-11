@@ -1,4 +1,4 @@
-Template.session.events({
+wTemplate.session.events({
 	"submit #welcomeRoute" : function(event){
 		event.preventDefault();
 
