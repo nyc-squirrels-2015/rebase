@@ -1,37 +1,51 @@
 .snippets_box{
   background:white;
   height:150px;
-
 }
 
 .upload_box{
   position:relative;
+  width:100%;
   text-align: center;
-  margin-top:-25px;
-  margin-bottom: 10px;
-
+  bottom: 0px;
+  color:white;
+  background:black;
+  padding:50px;
 }
+
 .timer_box{
   position:relative;
   text-align: center;
-
 }
 
+.sample-container p{
+  height:10px;
+  width:100px;
+}
 
-.time_delete button{
-  position:absolute;
-  left:500px;
+.info-container{
+}
 
+.sample-container button{
+  float:right;
+  background:transparent;
+  cursor:pointer;
+  color:white;
+}
+
+.sample-container{
+  padding-bottom:50px;
 }
 
 .song-name{
+  position:relative;
+  padding-top:20px;
   text-align: center;
+  color:white;
 }
 
-.session-snippets{
-
-background:red;
+.container-bar{
+  background: url('imgs/mixing.jpg') no-repeat left top ;
 
 
 }
-
