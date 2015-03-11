@@ -6,7 +6,15 @@ Template.snippets.helpers({
     } else {
       var d = new Date(required);
       console.log(d);
-      return Histories.findOne({ts: d}).snippets;
+      var snippetsToShow = [];
+      Histories.findOne({ts: d}).snippets.forEach(function(ele, index, array){
+        if (ele.songId === Session.get("songId")){
+          snippetsToShow.push(ele)
+        }
+      });
+      console.log("snippets to show ", snippetsToShow);
+      return snippetsToShow
+
     }
   },
 
@@ -44,25 +52,25 @@ Template.snippets.events({
  },
 
  'submit #saver': function(event){
-    event.preventDefault();
+  event.preventDefault();
 
 
-    var currentSnippets = $('audio-snippet')
+  var currentSnippets = $('audio-snippet')
 
-    var sessionSnippets = [];
-    var cueDataSet = [];
+  var sessionSnippets = [];
+  var cueDataSet = [];
 
 
-    for(var i = 0; i < currentSnippets.length; i++){
+  for(var i = 0; i < currentSnippets.length; i++){
       //grab all ids
       //grab all info an object
-       var snippetInfoHash = {
-                        cueIn: currentSnippets[i].dataset.cueIn,
-                        cueOut: currentSnippets[i].dataset.cueOut,
-                        src: currentSnippets[i].audio.src,
-                        songId: currentSnippets[i].dataset.songId}
+      var snippetInfoHash = {
+        cueIn: currentSnippets[i].dataset.cueIn,
+        cueOut: currentSnippets[i].dataset.cueOut,
+        src: currentSnippets[i].audio.src,
+        songId: currentSnippets[i].dataset.songId}
 
-      var currentSnippetId = currentSnippets[i].id +'';
+        var currentSnippetId = currentSnippets[i].id +'';
 
       //will fill new snippet object with it's info
       var snippet = new Object();
@@ -79,6 +87,7 @@ Template.snippets.events({
     console.log("sessions snippets ", sessionSnippets)
     var newHistory = new Object();
     newHistory.ts = new Date();
+    newHistory.songId = Session.get("songId");
     newHistory.snippets = sessionSnippets
 
     console.log("new history ", newHistory);
@@ -87,13 +96,13 @@ Template.snippets.events({
     //add newHistory to Histories collection
     Histories.insert(newHistory)
 
- },
+  },
 
- "click .remove_snippets": function(event){
-  var snippetId= this._id
-  $("#"+snippetId).remove()
-  $("#update_cues"+snippetId).remove()
- }
+  "click .remove_snippets": function(event){
+    var snippetId= this._id
+    $("#"+snippetId).remove()
+    $("#update_cues"+snippetId).remove()
+  }
 
 });
 
