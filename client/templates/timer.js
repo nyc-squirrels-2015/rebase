@@ -11,6 +11,7 @@ Template.timer.events({
   'click #start': function (event) {
     event.preventDefault();
     var test = 0.00;
+    var snips = $("audio-snippet")
     timerId = setInterval(function(){$("span")[0].innerText = (test += 0.01).toFixed(2); snips.each(function(index, ele){
         if (test >= parseInt(ele.dataset.cueIn) && test <= parseInt(ele.dataset.cueOut)) {
           ele.audio.play();
@@ -19,7 +20,6 @@ Template.timer.events({
           ele.audio.pause();
         }
     });}, 10);
-    var snips = $("audio-snippet")
 
 
 
