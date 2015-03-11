@@ -1,16 +1,18 @@
 <template name="band_list">
-  <hr>
-  <h2 class="center">Your Bands</h2>
+  <div class="band-list-main-container">
+    <hr>
+    <h2 class="center">Your Bands</h2>
 
-  <ul>
-    {{#each display_bands}}
-      <h3>{{name}}</h3>
-      {{> show_song}}
-      {{> create_song}}
-      {{> add_band_member}}
+    <ul>
+      {{#each display_bands}}
+        <h3>{{name}}</h3>
+        {{> show_song}}
+        {{> create_song}}
+        {{> add_band_member}}
 
-    {{/each}}
-  </ul>
-  <hr>
+      {{/each}}
+    </ul>
+    <hr>
+  </div>
 
 </template>
