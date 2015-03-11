@@ -2,7 +2,7 @@ Template.snippets.helpers({
   samples: function () {
     var required = Session.get('snippet_list');
     if (required === 'current' || !required) {
-      return  Snippets.find().fetch();
+      return  Snippets.find({songId: Session.get("songId")}).fetch();
     } else {
       var d = new Date(required);
       console.log(d);
@@ -80,7 +80,8 @@ Template.snippets.events({
       snippet.cueOut = snippetInfoHash.cueOut;
       snippet.songId = snippetInfoHash.songId;
 
-      sessionSnippets.push(snippet)
+      sessionSnippets.push(snippet);
+      console.log("snippet to be saved ", snippet)
     }
 
     console.log("sessions snippets ", sessionSnippets)
