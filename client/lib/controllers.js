@@ -31,7 +31,7 @@ var AudioSnippet = (function() {
 
   AudioSnippetProto.attachedCallback = function() {
 
-    //Draggable Functionality to Change CueIn/CueOut
+
     var currentSnippet = this;
     $( currentSnippet ).draggable(
       {
@@ -39,22 +39,13 @@ var AudioSnippet = (function() {
             var offset = $(currentSnippet).offset();
             var newCueIn = (offset.left)/20;
             $('#'+ currentSnippet.id)
-            var newCueOut = newCueIn + 2;
-
-            /* var newCueOut = newCueIn + Track Length*/
             currentSnippet.dataset.cueIn = newCueIn;
-
-            currentSnippet.dataset.cueOut = newCueOut;
-
-            // currentSnippet.dataset.cueOut = newCueIn + 20;
-
+            currentSnippet.dataset.cueOut = (newCueIn + this.audio.duration);
         },
         axis: 'x',
         containment: 'document',
         stop: function(){
-          $('#currentCue'+ currentSnippet.id).text("Cue In: " + currentSnippet.dataset.cueIn + " Cue Out: " + currentSnippet.dataset.cueOut)
-
-          var duck = $('#'+ currentSnippet.id).children('audio').duration
+          $('#currentCue'+ currentSnippet.id).text("Cue In: " + currentSnippet.dataset.cueIn)
         }
       }
     );
@@ -64,7 +55,7 @@ var AudioSnippet = (function() {
   };
 
   AudioSnippetProto.detachedCallback = function() {
-    console.log('<audio-snippet>.detachedCallback', this);
+
   };
 
   AudioSnippetProto.attributeChangedCallback = function(attr, oldVal, newVal) {
