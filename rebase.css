@@ -37,10 +37,15 @@ body section {
 }
 
 .create-band-container {
+  margin-top: 0;
 }
 
 
 .band-info {
-  background-color:rgba(0,0,0,0.7);
+  background-color:rgba(0,0,0,0.2);
   padding-top:5px;
+  border:2px solid;
+  border-radius:10px;
+  width:40%;
+  border-color:black;
 }
