@@ -14,10 +14,13 @@ Template.show_song.helpers({
 Template.show_song.events({
 	"submit #songName" : function(event){
 		event.preventDefault();
-		var sessionSongId = $("#songNameid").attr("name");
+		var sessionSongId = this._id  //$("#songNameid").attr("name");
+    // console.log("this ", this)
+    // console.log("sessionSongId ", sessionSongId);
 		Sessions.insert({
 			songId : sessionSongId
-		})
+		});
+    Session.set("songId", sessionSongId);
 
 		Router.go("/session")
 	}
