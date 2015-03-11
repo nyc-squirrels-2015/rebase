@@ -9,14 +9,15 @@
   </form>
   <br>
   {{#each samples}}
-  <div class="snippets_box">
+  <div class="snippets_box{{_id}}">
 
     <audio-snippet id="{{_id}}" src="{{url}}"
     data-cue-in="{{cueIn}}"
     data-cue-out="{{cueOut}}" data-song-id="{{songId}}">
     <p id="currentCue{{_id}}"></p>
+     <button class="remove_snippets"> Remove </button>
     </audio-snippet>
-    <button class="remove_snippets"> Remove </button>
+
   </div>
   {{/each}}
 </div>
