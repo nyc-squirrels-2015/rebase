@@ -1,17 +1,11 @@
 <template name="snippets">
 
-<<<<<<< HEAD
-<!--   <div id="audio_player">
-    <div id="audio_box"></div>
-    <canvas id="analyser_render"></canvas>
-  </div> -->
-=======
+
   <form id="time-history">
    <input type="datetime-local" name="rebase_time">
    <input type="submit">
  </form>
 
->>>>>>> add cue in time to draggable elements and remove cue out from being visisble
 
  <div id="snippet_list">
   <br>
@@ -25,21 +19,11 @@
   {{#each samples}}
     <audio-snippet id="{{_id}}" src="{{url}}"
     data-cue-in="{{cueIn}}"
-<<<<<<< HEAD
     data-cue-out="{{cueOut}}" data-song-id="{{songId}}">
-=======
-    data-cue-out="{{cueOut}}">
     <div id="currentCue{{_id}}"></div>
->>>>>>> add cue in time to draggable elements and remove cue out from being visisble
+
     <button class="remove_snippets"> Remove </button>
     </audio-snippet>
-
-
-    <form id="update_cues{{_id}}">
-      <input type="text" name="cueIn" placeholder="In: {{cueIn}} s">
-      <input type="text" name="cueOut" placeholder="Out: {{cueOut}} s">
-      <input type="submit">
-    </form>
 
   {{/each}}
 </div>
