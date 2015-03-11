@@ -10,8 +10,6 @@ Template.snippets.helpers({
     }
   },
 
-
-
   // snippets_for_rebase_date: function() {
   //   var snips = Snippets.find({createdAt:{$lt:Session.get('rebase_date')}}).fetch();
   //   console.log(snips)
@@ -102,6 +100,11 @@ Template.snippets.events({
   $("#"+snippetId).remove()
   $("#update_cues"+snippetId).remove()
  }
+<<<<<<< HEAD
+
+=======
+>>>>>>> add cue in time to draggable elements and remove cue out from being visisble
 
 
 });
+
