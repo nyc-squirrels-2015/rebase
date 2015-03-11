@@ -10,14 +10,6 @@ Template.snippets.helpers({
     }
   },
 
-
-
-  // snippets_for_rebase_date: function() {
-  //   var snips = Snippets.find({createdAt:{$lt:Session.get('rebase_date')}}).fetch();
-  //   console.log(snips)
-  //   return snips
-
-  // }
 });
 
 Template.snippets.events({
@@ -103,5 +95,5 @@ Template.snippets.events({
   $("#update_cues"+snippetId).remove()
  }
 
-
 });
+
