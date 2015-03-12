@@ -10,7 +10,9 @@
     <div class="">
       <a href="/" class="button py2 button-transparent"><img class="bass-clef-icon" src="/imgs/white_bass_clef.jpg"/></a>
       <a href="#" class="button py2 button-transparent">{{> loginButtons}}</a>
-
+      {{#if currentUser}}
+        <h2 id="rebass-header">REBASS</h2>
+      {{/if}}
     </div>
   </nav>
 
