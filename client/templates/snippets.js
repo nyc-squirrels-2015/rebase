@@ -98,6 +98,7 @@ Template.snippets.events({
 
   },
 
+
   "click .remove_snippets": function(event){
     var snippetId= this._id
     $("#"+snippetId).remove()

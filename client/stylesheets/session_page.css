@@ -1,0 +1,77 @@
+.snippets_box{
+  background:white;
+  height:150px;
+}
+
+.upload_box{
+  position:relative;
+  text-align: center;
+  bottom: 0px;
+  color:white;
+  background:black;
+  padding:50px;
+}
+
+.timer_box{
+  position:relative;
+  text-align: center;
+}
+
+.sample-container p{
+  height:10px;
+  width:100px;
+}
+
+.info-container{
+}
+
+.sample-container button{
+  float:right;
+  background:transparent;
+  cursor:pointer;
+  color:white;
+}
+
+.sample-container{
+  padding-bottom:50px;
+}
+
+.song-name{
+  position:relative;
+  padding-top:20px;
+  text-align: center;
+  color:white;
+}
+
+.container-bar{
+  background: url('imgs/mixing.jpg') no-repeat left top ;
+}
+
+
+#timer-container button{
+ color:white;
+ background:black;
+ border:solid black;
+ border-radius:5px;
+}
+
+
+.select-container select{
+
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.select-container{
+  position:relative;
+  width:100%;
+
+}
+
+.py1 input{
+
+  padding-bottom:15px;
+}
+
+

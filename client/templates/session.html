@@ -1,27 +1,27 @@
 <template name="session">
-  <h3 class="center">Create a session</h3>
-  <h3 id="song-name">"{{songName}}"</h3>
-  <hr>
+<div class='container-bar'>
+  <h1 class="song-name">{{songName}}</h1>
 
   <div class="clearfix outline-blue">
-    <div class="col col-6">
-      <h2 class="px2">Upload a short audio snippet from your computer</h2>
-        {{> uploadForm}}
-    </div>
 
+    <div class="timer_box">
+        {{> timer}}
+    </div>
   </div>
 
-  <hr>
-  {{> timer}}
+
+    {{> snippets}}
 
 
+<div class="upload_box">
+        {{> uploadForm}}
+        <br>
+        <form id="welcomeRoute" action="/">
+        <input type ="submit" value="Leave Session">
+        </form>
+</div>
 
-  {{> snippets}}
-
-
-  <form id="welcomeRoute" action="/">
-    <input type ="submit" value="Leave Session">
-  </form>
+</div>
 </template>
 
 

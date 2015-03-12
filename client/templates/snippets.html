@@ -1,25 +1,25 @@
 <template name="snippets">
 
  <div id="snippet_list">
-  <form id="saver">
-    <input type="submit" value="Save History">
-  </form>
-  <hr>
+
   {{> history_selector}}
+  <form class='center' id="saver">
+    <input class="mb0 field-dark" type="submit" value="Save History">
+  </form>
   <br>
-  {{#each samples}}
-  <div class="py1">
-    <audio-snippet id="{{_id}}" src="{{url}}"
-    data-cue-in="{{cueIn}}"
-    data-cue-out="{{cueOut}}" data-song-id="{{songId}}">
-    <div id="currentCue{{_id}}"></div>
 
-    <button class="remove_snippets"> Remove </button>
-    </audio-snippet>
-  </div>
-  {{/each}}
+<div class='sample-container'>
+    {{#each samples}}
+      <audio-snippet id="{{_id}}" src="{{url}}"
+      data-cue-in="{{cueIn}}"
+      data-cue-out="{{cueOut}}" data-song-id="{{songId}}">
+      <div class="info-container">
+      <p id="currentCue{{_id}}"></p>
+       <button class="remove_snippets"> Remove </button>
+      </div>
+      </audio-snippet>
+
+    {{/each}}
 </div>
-<button id="play_all">Play All</button>
-<button id="pause_all">Pause All</button>
-
+</div>
 </template>

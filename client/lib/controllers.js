@@ -46,6 +46,8 @@ var AudioSnippet = (function() {
         containment: 'document',
         stop: function(){
           $('#currentCue'+ currentSnippet.id).text("Cue In: " + currentSnippet.dataset.cueIn)
+          $('#currentCue'+ currentSnippet.id).css('color','white')
+
         }
       }
     );
