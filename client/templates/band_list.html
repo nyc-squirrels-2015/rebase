@@ -1,21 +1,19 @@
 <template name="band_list">
   <div class="band-list-container">
     <div class="band-list-main-container">
-      <h2 class="center py2">Your Bands</h2>
-
-
+      <h2 class="center py2"></h2>
+      <div class='clearfix'>
         {{#each display_bands}}
+        <div class='lg-col-3 px2'>
           <h3 class="white px3">{{name}}</h3>
           <div class="band-info px3">
             {{> show_song}}
             {{> create_song}}
             {{> add_band_member}}
           </div>
-
+        </div>
         {{/each}}
-
-
+      </div>
     </div>
   </div>
-
 </template>

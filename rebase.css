@@ -24,15 +24,19 @@
   margin: 0px;
 }
 
-body section {
 
-}
 
 #index-section {
   max-width:100%;
   margin-left: inherit;
   margin-right: inherit;
   background-color: white;
+
+}
+
+label{
+  font-weight:900;
+  font-size:25px;
 
 }
 
@@ -48,3 +52,7 @@ body section {
   border-radius:10px;
   width:40%;
 }
+/*
+.col{
+  float:left;
+}*/
