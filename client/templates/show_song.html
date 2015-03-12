@@ -1,16 +1,15 @@
 <template name="show_song">
 
-  <ul>
-    <p class="white">Your songs:</p>
-    {{#each display_songs}}
     <div class="song">
-      <form class="show-song-form" id="songName" action="/session">
+    {{#each display_songs}}
+
+     <center> <form class="show-song-form" id="songName" action="/session">
       	<input class="songname" id ="songNameid" type="hidden" name = "{{_id}}">
-      	<input type="submit" class="mb0 field-dark" value ="{{name}}">
-      </form>
-    </div>
+      	<input type="submit" class="mb0 field-dark" id='song_link' value ="{{name}}">
+      </form></center>
+
     {{/each}}
-  </ul>
+    </div>
 
 </template>
 
