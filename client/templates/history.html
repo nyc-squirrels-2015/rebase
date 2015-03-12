@@ -3,14 +3,15 @@
 </template>
 
 <template name="history_selector">
-  <form id="history-selector">
-    Version:<select name="histories">
+  <div class="py2 select-container">
+    <form id="history-selector">
+      <select class="block field-dark" name="histories">
       <option value="current">current</option>
       {{#each ts_from_history}}
       <option value="{{ts.toISOString}}">{{ts}}</option>
       {{/each}}
     </select>
-
-  </form>
+    </form>
+  </div>
 </template>
 

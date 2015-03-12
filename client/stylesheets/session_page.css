@@ -45,6 +45,26 @@
 
 .container-bar{
   background: url('imgs/mixing.jpg') no-repeat left top ;
+}
 
+
+#timer-container button{
+ color:white;
+ background:black;
+ border:solid black;
+ border-radius:5px;
+}
+
+
+.select-container select{
+
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.select-container{
+  position:relative;
+  width:100%;
 
 }
